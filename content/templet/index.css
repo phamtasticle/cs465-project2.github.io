@@ -1,6 +1,5 @@
 body{
-    background-image: url('../../Images/VegetableBackground.jpg');
-    /*change image url later*/
+    background-image: url('../Images/VegetableBackground.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
