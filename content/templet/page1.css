@@ -4,19 +4,23 @@ body{
 .jumbotron{
     background-color: lightslategray;
 }
-
+.container > .row{
+    display: grid;
+    grid-template-columns: repeat(10,200px) ; 
+}
 #Ingredients_id{
     width: 20em;
 }
-.card{
-    min-width: 100px;
-    min-height: 100px;
-    width: 0fr;
-    height: 1rem;
+.card-text{
+   white-space: normal;
 }
 .card > .row {
     overflow-x: auto;
     white-space: nowrap;
+    min-width: 100px;
+    min-height: 200px;
+    height: 1rem;
+
 }
   .card > .row > .col-xs-4 {
     display: inline-block;
