@@ -1,0 +1,65 @@
+body{
+    background-image: url('../../Images/VegetableBackground.jpg');
+    /*change image url later*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100vw;
+}
+
+#mainContainer{
+    background-color: rgba(255, 255, 255, 0.9);
+    height: 75%;
+    position: relative;
+    top: 12.5%;
+    width: 60%; 
+    border-radius: 15px;
+}
+
+.row{
+    height: 100%;
+}
+
+.col-8{
+   /* border-left: 3px solid black;*/
+}
+
+.searchForm{
+    margin-top: 20%;
+}
+
+.searchBar{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid rgb(173, 173, 173);
+    border-radius: 0px;
+    width: 90%;
+}
+
+.searchBar:focus{
+    border-color: none;
+    box-shadow: none;
+    background-color: transparent;
+    border-bottom: 2px solid rgb(104, 199, 49); 
+}
+
+.searchItems{
+    background-color: transparent;
+    width: 90%;
+    padding-left: 0px;
+    margin-left: 0px;
+}
+
+.searchDisplay{
+    background-color: rgb(104, 199, 49);
+    color: white;
+    border-radius: 18px;
+    margin-left: 3px;
+    margin-bottom: 5px;
+}
+
+.searchInput:hover{
+    background-color: rgba(104, 199, 49, 0.8);
+}
+
