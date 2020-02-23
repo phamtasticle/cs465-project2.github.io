@@ -17,9 +17,9 @@ function addSearchItem(){
 }
 
 function addHealthLabel(){
-    var label = $("#healthLabels option:selected").text();
+    var label = $("#healthLabelSelect option:selected").text();
 
-    $(".searchItems").append($("<input></input>")
+    $(".healthLabelItems").append($("<input></input>")
         .attr({
             'type': 'button',
             'class': 'btn searchDisplay labelDisplay',
