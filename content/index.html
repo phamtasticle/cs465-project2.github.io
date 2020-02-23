@@ -15,33 +15,43 @@
 </head>
 
 <body>
-    <div class="container px-4" id="mainContainer">
-        <div class="row">
-            <div class="col-4">
-                <h1 class="display-1">Title Here</h1>
-            </div>
-            <div class="col-8">
+    <div class="row">
+        <div class="col-4">
+            <h1 class="display-1">Food Finder</h1>
+            <img src="Images/LeafLogo.jpg" alt="Logo" widht="125" height="125" id="logo">
+        </div>
+        <div class="col-8">
+            <div class="container" id="formContainer">
                 <form action="#" class="searchForm">
                     <div class="form-group">
                         <input type="search" onsearch="addSearchItem()" class="form-control" id="searchBar"
-                            placeholder="Enter keywords">
+                            placeholder="Add keywords to search by">
                     </div>
-                    <div class="form-group">
-                        <label for="healthLabels">Health labels</label>
-                        <select name="healthLabels" id="healthLabels" class="form-control" onchange="addHealthLabel()">
+                    <div class="container searchItems">
+                        <!--Searched items will show up in this div as they get searched-->
+                    </div>
+                    <div class="form-group healthLabelContainer">
+                        <label for="healthLabelSelect">Health labels</label>
+                        <select name="healthLabels" id="healthLabelSelect" class="form-control"
+                            onchange="addHealthLabel()">
+                            <option value="dairyFree">Dairy Free</option>
+                            <option value="glutenFree">Gluten Free</option>
+                            <option value="keto">Keto</option>
+                            <option value="kosher">Kosher</option>
+                            <option value="paleo">Paleo</option>
                             <option value="vegan">Vegan</option>
                             <option value="vegetarian">Vegetarian</option>
-                            <option value="dairyFree">Dairy Free</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn" onclick="submitSearch()">Submit</button>
+                    <div class="container healthLabelItems">
+                        <!--Selected health labels will show up in this div as they get searched-->
+                    </div>
+                    <button type="submit" class="btn submitButton" onclick="submitSearch()">Submit</button>
                 </form>
-                <div class="container searchItems">
-                    <!--Searched items will show up in this div as they get searched-->
-                </div>
             </div>
         </div>
     </div>
+
 </body>
 
 </html>
