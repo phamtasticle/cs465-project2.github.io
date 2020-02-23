@@ -1,13 +1,38 @@
-function addSearchItem(){
-    var item = document.getElementsByClassName("searchBar");
+var searchArray = [];  //array to hold keywords to search by
 
-    $(".searchItems").append('<input type="button" class="btn searchDisplay" value=item>');
- /*
-    $(".searchItems").append("<input>")
+function addSearchItem(){
+    var item = $("#searchBar").val();
+
+    //add button to display on page
+    $(".searchItems").append($("<input></input>")
         .attr({
             'type': 'button',
-            'class': 'btn searchInput',
-            'value': item.value
-        });
-        */
+            'class': 'btn searchDisplay',
+            'value': item
+        }));
+
+    //add value to search array
+    searchArray.push(item);
+    return false;
+}
+
+function addHealthLabel(){
+    var label = $("#healthLabels option:selected").text();
+
+    $(".searchItems").append($("<input></input>")
+        .attr({
+            'type': 'button',
+            'class': 'btn searchDisplay labelDisplay',
+            'value': label
+        })); 
+    
+    return false;
+}
+
+function submitSearch(){
+    var len = searchArray.length;
+    console.log("searchArray:")
+    for (var i=0; i<len; ++i){
+        console.log(searchArray[i]);
+    }
 }
