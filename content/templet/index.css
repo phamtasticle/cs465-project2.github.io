@@ -20,15 +20,16 @@ body{
     height: 100%;
 }
 
-.col-8{
-   /* border-left: 3px solid black;*/
-}
-
 .searchForm{
     margin-top: 20%;
 }
 
-.searchBar{
+.form-control:focus{
+    border: none;
+    box-shadow: none;
+}
+
+#searchBar{
     background-color: transparent;
     border: none;
     border-bottom: 2px solid rgb(173, 173, 173);
@@ -56,6 +57,10 @@ body{
     border-radius: 18px;
     margin-left: 3px;
     margin-bottom: 5px;
+}
+
+.labelDisplay{
+    background-color: rgb(117, 170, 250)
 }
 
 .searchInput:hover{

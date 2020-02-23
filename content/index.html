@@ -23,11 +23,21 @@
             <div class="col-8">
                 <form action="#" class="searchForm">
                     <div class="form-group">
-                        <input type="search" onsearch="addSearchItem()" class="form-control searchBar" placeholder="Search">
+                        <input type="search" onsearch="addSearchItem()" class="form-control" id="searchBar"
+                            placeholder="Enter keywords">
                     </div>
+                    <div class="form-group">
+                        <label for="healthLabels">Health labels</label>
+                        <select name="healthLabels" id="healthLabels" class="form-control" onchange="addHealthLabel()">
+                            <option value="vegan">Vegan</option>
+                            <option value="vegetarian">Vegetarian</option>
+                            <option value="dairyFree">Dairy Free</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn" onclick="submitSearch()">Submit</button>
                 </form>
                 <div class="container searchItems">
-                    <input type="button" class="btn searchDisplay" value="apple">
+                    <!--Searched items will show up in this div as they get searched-->
                 </div>
             </div>
         </div>
