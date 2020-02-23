@@ -4,6 +4,10 @@ let myApiId = "&app_id=fc2d8135";
 var searchArray = []; //array to hold keywords to search by
 
 function addSearchItem() {
+  if (searchArray.length >= 10) {
+    window.alert("max items already added");
+    return;
+  }
   var item = $("#searchBar").val();
 
   //add button to display on page
@@ -43,6 +47,7 @@ function submitSearch() {
         console.log(searchArray[i]);
     }
     */
+
   if (searchArray.length < 1) {
     window.alert("Zero ingredients added");
     return;
