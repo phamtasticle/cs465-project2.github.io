@@ -56,10 +56,13 @@ function submitSearch() {
   }
   
   sendGetRequest(searchArray);
-  window.location.pathname = '/content/page1.html'
+
+  window.location.pathname = "/content/page1.html";
+
 }
 
 function sendGetRequest(q) {
+  //second change
   //make request without reloading page
   xmlRequest = new XMLHttpRequest();
 
@@ -67,12 +70,12 @@ function sendGetRequest(q) {
   xmlRequest.onload = function() {
     
     let response = JSON.parse(this.responseText);
-    let t = response.hits[0].recipe.url;
-    console.log(t);
 
-    localStorage.setItem("items",t);
 
-    
+    //console.log(response.hits);
+
+    localStorage.setItem("food", JSON.stringify(response.hits));
+
     /*
     response.hits.map(dish => {
       makeCard(dish.recipe.label, dish.recipe.ingredients, dish.recipe.image);
@@ -84,15 +87,11 @@ function sendGetRequest(q) {
   xmlRequest.open("GET", url + q + myApiId + myApiKey);
   
   xmlRequest.send();
-};
 
-function gettingitems() {
-  let t = localStorage.getItem("items");
-  //let m = JSON.parse(t);
-  let temp = document.getElementById("1");
-
-  temp1 = "location.href='" + t + "';"
-  temp.setAttribute('onclick',temp1);
-  console.log(temp);
-  console.log(t);
 }
+
+function getRecipes() {
+  let myFood = JSON.parse(localStorage.getItem("food"));
+  console.log(myFood);
+}
+

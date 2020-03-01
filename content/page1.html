@@ -1,128 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <script src="Search.js">
-        window.onload = gettingitems;
+
+  <head>
+    <meta charset="UTF-8" />
+    <script src="Search.js"></script>
+    <script src="popup.js"></script>
+    <script>
+      window.onload = getRecipes;
     </script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="templet/page1.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="templet/page1.css" />
+
     <title>rename</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <div class="search_area">
-        search stuff goes here
+      search stuff goes here
     </div>
-      <div class="container card">
-        <div class="row">
-            <div class="card-body col-xs-4" id="test">
-                <img src='http://placekitten.com/200/100' width="180" height="100">
-                <h4 class="card-title ">Card title</h4>
 
-                <p class="card-text">
-                Some quick example text to build on the card title
-                and make up the bulk of the card's content.
-                </p>
-                <input type="button" class="btn btn-outline-primary" onclick=gettingitems() value="View Full Recepie " id="1" href="/"/>
+    <div class="container card">
+      <div class="row">
+        <div class="card-body col-xs-4" id="test">
+          <img src="http://placekitten.com/200/100" width="180" height="100" />
+          <h4 class="card-title ">Card title</h4>
 
-            </div>
-            <div class="card-body col-xs-6">
-                <img src='http://placekitten.com/200/100' width="180" height="100">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">
-                Some quick example text to build on the card title
-                and make up the bulk of the card's content.
-                </p>
-                <input type="button" class="btn btn-outline-primary" onclick="location.href='http://google.com';" value="View Full Recepie " />
-            </div>
-            <div class="card-body col-xs-4">
-                <img src='http://placekitten.com/200/100' width="180" height="100">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">
-                Some quick example text to build on the card title
-                and make up the bulk of the card's content.
-                </p>
-                <input type="button" class="btn btn-outline-primary" onclick="location.href='http://google.com';" value="View Full Recepie " />
-            </div>
-            <div class="card-body col-xs-4">
-                <img src='http://placekitten.com/200/100' width="180" height="100">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">
-                Some quick example text to build on the card title
-                and make up the bulk of the card's content.
-                </p>
-                <input type="button" class="btn btn-outline-primary" onclick="location.href='http://google.com';" value="View Full Recepie " />
-            </div>
-            <div class="card-body col-xs-4">
-                <img src='http://placekitten.com/200/100' width="180" height="100">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">
-                Some quick example text to build on the card title
-                and make up the bulk of the card's content.
-                </p>
-                <input type="button" class="btn btn-outline-primary" onclick="location.href='http://google.com';" value="View Full Recepie " />
-            </div>
-            <div class="card-body col-xs-4">
-                <img src='http://placekitten.com/200/100' width="180" height="100">
 
-                <h4 class="card-title ">Card title</h4>
-                <p class="card-text">
-                Some quick example text to build on the card title
-                and make up the bulk of the card's content.
-                </p>
-
-                <input type="button" class="btn btn-outline-primary" onclick="location.href='http://google.com';" value="View Full Recepie " />
-            </div>
-            <div class="card-body col-xs-4">
-                <img src='http://placekitten.com/200/100' width="180" height="100">
-
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">
-                Some quick example text to build on the card title
-                and make up the bulk of the card's content.
-                </p>
-
-                <input type="button" class="btn btn-outline-primary" onclick="location.href='http://google.com';" value="View Full Recepie " />
-            </div>
-            <div class="card-body col-xs-4">
-                <img src='http://placekitten.com/200/100' width="180" height="100">
-
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">
-                Some quick example text to build on the card title
-                and make up the bulk of the card's content.
-                </p>
-
-                <input type="button" class="btn btn-outline-primary" onclick="location.href='http://google.com';" value="View Full Recepie " />
-            </div>
-            <div class="card-body col-xs-4">
-                <img src='http://placekitten.com/200/100' width="180" height="100">
-
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">
-                Some quick example text to build on the card title
-                and make up the bulk of the card's content.
-                </p>
-
-                <input type="button" class="btn btn-outline-primary" onclick="location.href='http://google.com';" value="View Full Recepie " />
-            </div>
-            <div class="card-body col-xs-4">
-                <img src='http://placekitten.com/200/100' width="180" height="100">
-
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">
-                Some quick example text to build on the card title
-                and make up the bulk of the card's content.
-                </p>
-
-                <input type="button" class="btn btn-outline-primary" onclick="location.href='http://google.com';" value="View Full Recepie " />
-            </div>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <input
+            type="button"
+            class="btn btn-outline-primary"
+            onclick="location.href='http://google.com';"
+            value="View Full Recepie "
+          />
         </div>
-        
-      </div> 
+        <div class="card-body col-xs-6">
+          <img src="http://placekitten.com/200/100" width="180" height="100" />
+          <h4 class="card-title">Card title</h4>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <input
+            type="button"
+            class="btn btn-outline-primary"
+            onclick="location.href='http://google.com';"
+            value="View Full Recepie "
+          />
+        </div>
+        <div class="card-body col-xs-4">
+          <img src="http://placekitten.com/200/100" width="180" height="100" />
+          <h4 class="card-title">Card title</h4>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <input
+            type="button"
+            class="btn btn-outline-primary"
+            onclick="location.href='http://google.com';"
+            value="View Full Recepie "
+          />
+        </div>
+        <div class="card-body col-xs-4">
+          <img src="http://placekitten.com/200/100" width="180" height="100" />
+          <h4 class="card-title">Card title</h4>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <input
+            type="button"
+            class="btn btn-outline-primary"
+            onclick="location.href='http://google.com';"
+            value="View Full Recepie "
+          />
+        </div>
+        <div class="card-body col-xs-4">
+          <img src="http://placekitten.com/200/100" width="180" height="100" />
+          <h4 class="card-title">Card title</h4>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <input
+            type="button"
+            class="btn btn-outline-primary"
+            onclick="location.href='http://google.com';"
+            value="View Full Recepie "
+          />
+        </div>
+        <div class="card-body col-xs-4">
+          <img src="http://placekitten.com/200/100" width="180" height="100" />
 
-</body>
+          <h4 class="card-title ">Card title</h4>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+
+          <input
+            type="button"
+            class="btn btn-outline-primary"
+            onclick="location.href='http://google.com';"
+            value="View Full Recepie "
+          />
+        </div>
+        <div class="card-body col-xs-4">
+          <img src="http://placekitten.com/200/100" width="180" height="100" />
+
+          <h4 class="card-title">Card title</h4>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+
+          <input
+            type="button"
+            class="btn btn-outline-primary"
+            onclick="location.href='http://google.com';"
+            value="View Full Recepie "
+          />
+        </div>
+        <div class="card-body col-xs-4">
+          <img src="http://placekitten.com/200/100" width="180" height="100" />
+
+          <h4 class="card-title">Card title</h4>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+
+          <input
+            type="button"
+            class="btn btn-outline-primary"
+            onclick="location.href='http://google.com';"
+            value="View Full Recepie "
+          />
+        </div>
+        <div class="card-body col-xs-4">
+          <img src="http://placekitten.com/200/100" width="180" height="100" />
+
+          <h4 class="card-title">Card title</h4>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+
+          <input
+            type="button"
+            class="btn btn-outline-primary"
+            onclick="location.href='http://google.com';"
+            value="View Full Recepie "
+          />
+        </div>
+        <div class="card-body col-xs-4">
+          <img src="http://placekitten.com/200/100" width="180" height="100" />
+
+          <h4 class="card-title">Card title</h4>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+
+          <input
+            type="button"
+            class="btn btn-outline-primary"
+            onclick="location.href='http://google.com';"
+            value="View Full Recepie "
+          />
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
