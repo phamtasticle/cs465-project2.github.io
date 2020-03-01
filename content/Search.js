@@ -72,9 +72,9 @@ function sendGetRequest(q) {
     console.log(t);
     
     localStorage.setItem("items",t);
-
-    
-    window.location.pathname = '/content/page1.html'
+    let t1 = JSON.stringify(response.hits);
+    console.log(t1);
+    //window.location.pathname = '/content/page1.html'
     
     /*
     response.hits.map(dish => {
