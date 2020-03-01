@@ -3,6 +3,8 @@ let myApiKey = "&app_key=6c85be342a5528cb19c8eed9fc6ab235";
 let myApiId = "&app_id=fc2d8135";
 var searchArray = []; //array to hold keywords to search by
 
+
+
 function addSearchItem() {
   if (searchArray.length >= 10) {
     window.alert("max items already added");
@@ -52,7 +54,9 @@ function submitSearch() {
     window.alert("Zero ingredients added");
     return;
   }
+  
   sendGetRequest(searchArray);
+  window.location.pathname = '/content/page1.html'
 }
 
 function sendGetRequest(q) {
@@ -61,8 +65,14 @@ function sendGetRequest(q) {
 
   //if request is succesfull this function happen
   xmlRequest.onload = function() {
+    
     let response = JSON.parse(this.responseText);
-    console.log(response.hits);
+    let t = response.hits[0].recipe.url;
+    console.log(t);
+
+    localStorage.setItem("items",t);
+
+    
     /*
     response.hits.map(dish => {
       makeCard(dish.recipe.label, dish.recipe.ingredients, dish.recipe.image);
@@ -72,5 +82,17 @@ function sendGetRequest(q) {
 
   //sending GET request
   xmlRequest.open("GET", url + q + myApiId + myApiKey);
+  
   xmlRequest.send();
+};
+
+function gettingitems() {
+  let t = localStorage.getItem("items");
+  //let m = JSON.parse(t);
+  let temp = document.getElementById("1");
+
+  temp1 = "location.href='" + t + "';"
+  temp.setAttribute('onclick',temp1);
+  console.log(temp);
+  console.log(t);
 }

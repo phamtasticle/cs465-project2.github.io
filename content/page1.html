@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script src="popup.js"></script>
+    <script src="Search.js">
+        window.onload = gettingitems;
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
@@ -24,7 +26,7 @@
                 Some quick example text to build on the card title
                 and make up the bulk of the card's content.
                 </p>
-                <input type="button" class="btn btn-outline-primary" onclick="location.href='http://google.com';" value="View Full Recepie " />
+                <input type="button" class="btn btn-outline-primary" onclick=gettingitems() value="View Full Recepie " id="1" href="/"/>
 
             </div>
             <div class="card-body col-xs-6">
