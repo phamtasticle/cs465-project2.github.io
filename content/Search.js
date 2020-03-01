@@ -53,16 +53,21 @@ function submitSearch() {
     return;
   }
   sendGetRequest(searchArray);
+  window.location.pathname = "/content/page1.html";
 }
 
 function sendGetRequest(q) {
+  //second change
   //make request without reloading page
   xmlRequest = new XMLHttpRequest();
 
   //if request is succesfull this function happen
   xmlRequest.onload = function() {
     let response = JSON.parse(this.responseText);
-    console.log(response.hits);
+
+    //console.log(response.hits);
+
+    localStorage.setItem("food", JSON.stringify(response.hits));
     /*
     response.hits.map(dish => {
       makeCard(dish.recipe.label, dish.recipe.ingredients, dish.recipe.image);
@@ -73,4 +78,9 @@ function sendGetRequest(q) {
   //sending GET request
   xmlRequest.open("GET", url + q + myApiId + myApiKey);
   xmlRequest.send();
+}
+
+function getRecipes() {
+  let myFood = JSON.parse(localStorage.getItem("food"));
+  console.log(myFood);
 }
