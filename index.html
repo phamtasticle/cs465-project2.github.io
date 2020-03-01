@@ -16,8 +16,8 @@
     ></script>
 
     <script src="content/Search.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="content/templet/index.css" />
-
     <title>Main Page</title>
   </head>
 
@@ -36,13 +36,20 @@
       <div class="col-8">
         <div class="container" id="formContainer">
           <form action="#" class="searchForm">
-            <div class="form-group">
+            <div class="form-group" id="searchGroup">
               <input
                 type="search"
                 class="form-control"
                 id="searchBar"
                 placeholder="Add keywords to search by"
               />
+              <button
+              type="button"
+              class="btn submitButton addButton"
+              onclick="addSearchItem()"
+               >
+              Add
+              </button>
             </div>
             <div class="container searchItems">
               <!--Searched items will show up in this div as they get searched-->
@@ -73,13 +80,6 @@
               onclick="submitSearch()"
             >
               Submit
-            </button>
-            <button
-              type="button"
-              class="btn submitButton"
-              onclick="addSearchItem()"
-            >
-              Add
             </button>
           </form>
         </div>

@@ -22,6 +22,9 @@ function addSearchItem() {
   //add value to search array
   searchArray.push(item);
   console.log("last item: " + searchArray[searchArray.length - 1]);
+  
+  //clear search bar
+  $("#searchBar").val('');
   return false;
 }
 
