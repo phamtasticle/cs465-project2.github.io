@@ -53,7 +53,6 @@ function submitSearch() {
     return;
   }
   sendGetRequest(searchArray);
-  window.location.pathname = "/content/page1.html";
 }
 
 function sendGetRequest(q) {
@@ -65,9 +64,11 @@ function sendGetRequest(q) {
   xmlRequest.onload = function() {
     let response = JSON.parse(this.responseText);
 
-    //console.log(response.hits);
+    console.log(response.hits);
 
-    localStorage.setItem("food", JSON.stringify(response.hits));
+    sessionStorage.setItem("food", JSON.stringify(response.hits));
+
+    window.location.pathname = "/content/page1.html";
     /*
     response.hits.map(dish => {
       makeCard(dish.recipe.label, dish.recipe.ingredients, dish.recipe.image);
@@ -81,6 +82,8 @@ function sendGetRequest(q) {
 }
 
 function getRecipes() {
-  let myFood = JSON.parse(localStorage.getItem("food"));
+  let myFood = JSON.parse(sessionStorage.getItem("food"));
   console.log(myFood);
+  return myFood;
 }
+const moreFood = getRecipes();
