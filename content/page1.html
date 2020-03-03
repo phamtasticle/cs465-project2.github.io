@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
             integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" 
             crossorigin="anonymous"></script>
@@ -26,7 +27,8 @@
           type="text/css" 
           href="templet/page1.css"
           />
-    <title>rename</title>
+          
+    <title>PlaceHolder</title>
 </head>
 <body>
 
@@ -36,10 +38,10 @@
       <div class="container card">
         <div class="row">
             <div class="card-body col-xs-4" >
-                <img src='http://placekitten.com/200/100' width="180" height="100" id="img1">
-                <h3 class="card-title" id="title1"></h4>
+                <img src='http://placekitten.com/200/180' width="180" height="180" name="img1">
+                <h5 class="card-title" name="title1"></h5>
 
-                <p class="card-text">
+                <p class="card-text" name="text1">
                 
                 </p>
                 <button type="button" class="btn  btn-outline-primary" data-toggle="modal" data-target="#modal1">
@@ -148,7 +150,7 @@
   <div class="modal-dialog" >
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title modal-title" id="title1.1">Modal title</h5>
+        <h3 class="modal-title modal-title" name="title1">Modal title</h3>
         <button type="button" 
                 class="close" 
                 data-dismiss="modal" 
@@ -160,12 +162,13 @@
       </div>
       <div class="modal-body">
         <img src='http://placekitten.com/200/100' 
-              width="200" height="200" id ="img1">
+              width="200" height="200" name="img1">
         
       </div>
       <div class="modal-footer">
+        <button type="button" onclick="" class="btn btn-primary" name="web1">Full website</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" onclick="" class="btn btn-primary" id="web1">Full website</button>
+        
       </div>
     </div>
   </div>

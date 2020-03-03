@@ -87,11 +87,23 @@ function sendGetRequest(q) {
 function getRecipes() {
   let myFood = JSON.parse(sessionStorage.getItem("food"));
   let recipe1= myFood[0].recipe;
-  document.getElementById("title1").innerHTML = recipe1.label;
-  document.getElementById("title1.1").innerHTML = recipe1.label;
+  let title1 = document.getElementsByName("title1");
+  let img1 = document.getElementsByName("img1");
+  let url = document.getElementsByName("web1");
 
+  let i;
+  for( i=0; i < title1.length; ++i){
+    title1[i].innerHTML = recipe1.label;
+  }
+  for( i=0; i < img1.length; ++i){
+    img1[i].setAttribute('src',recipe1.image);
+  }
+  for( i=0; i < url.length; ++i){
+    let temp1 = "location.href='" + recipe1.url +"';";
+    url[i].setAttribute('onclick',temp1);
+  }
   console.log(myFood);
-  console.log(recipe1.label);
+  console.log(recipe1.image);
   return myFood;
 }
 const moreFood = getRecipes();
