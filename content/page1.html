@@ -31,12 +31,13 @@
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </p>
-          <input
+          <button
             type="button"
             class="btn btn-outline-primary"
-            onclick="location.href='http://google.com';"
-            value="View Full Recepie "
-          />
+            data-toggle="modal"
+            data-target="mymodal">
+            View Full Recepie</button>
+
         </div>
         <div class="card-body col-xs-6">
           <img src="http://placekitten.com/200/100" width="180" height="100" />
@@ -177,4 +178,26 @@
       </div>
     </div>
   </body>
+  <!--
+      Modal Popup
+
+  -->
+  <div class="modal" id="mymodal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">
+            the title
+          </h3>
+        </div>
+        <div class="modal-body">
+          body text goes here!
+        </div>
+        <div class="modal-footer">
+          button HERE
+        </div>
+      </div>
+    </div>
+  </div>
+  
 </html>
