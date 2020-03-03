@@ -24,6 +24,9 @@ function addSearchItem() {
   //add value to search array
   searchArray.push(item);
   console.log("last item: " + searchArray[searchArray.length - 1]);
+  
+  //clear search bar
+  $("#searchBar").val('');
   return false;
 }
 
@@ -56,7 +59,10 @@ function submitSearch() {
   }
   
   sendGetRequest(searchArray);
+
   //
+
+
 }
 
 function sendGetRequest(q) {
@@ -67,15 +73,14 @@ function sendGetRequest(q) {
   xmlRequest.onload = function() {
     
     let response = JSON.parse(this.responseText);
+
+
     console.log(response.hits);
-    let t = response.hits[0].recipe.url;
-    console.log(t);
-    
-    localStorage.setItem("items",t);
-    let t1 = JSON.stringify(response.hits);
-    console.log(t1);
-    //window.location.pathname = '/content/page1.html'
-    
+
+    sessionStorage.setItem("food", JSON.stringify(response.hits));
+
+    window.location.pathname = "/content/page1.html";
+
     /*
     response.hits.map(dish => {
       makeCard(dish.recipe.label, dish.recipe.ingredients, dish.recipe.image);
@@ -89,13 +94,11 @@ function sendGetRequest(q) {
   xmlRequest.send();
 };
 
-function gettingitems() {
-  let t = localStorage.getItem("items");
-  //let m = JSON.parse(t);
-  let temp = document.getElementById("1");
 
-  temp1 = "location.href='"+ t +"';"
-  temp.setAttribute('onclick',temp1);
-
-  console.log(t);
+function getRecipes() {
+  let myFood = JSON.parse(sessionStorage.getItem("food"));
+  console.log(myFood);
+  return myFood;
 }
+const moreFood = getRecipes();
+
