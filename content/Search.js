@@ -3,8 +3,6 @@ let myApiKey = "&app_key=6c85be342a5528cb19c8eed9fc6ab235";
 let myApiId = "&app_id=fc2d8135";
 var searchArray = []; //array to hold keywords to search by
 
-
-
 function addSearchItem() {
   if (searchArray.length >= 10) {
     window.alert("max items already added");
@@ -57,30 +55,23 @@ function submitSearch() {
     window.alert("Zero ingredients added");
     return;
   }
-  
   sendGetRequest(searchArray);
-
-  //
-
-
 }
 
 function sendGetRequest(q) {
+  //second change
   //make request without reloading page
   xmlRequest = new XMLHttpRequest();
 
   //if request is succesfull this function happen
   xmlRequest.onload = function() {
-    
     let response = JSON.parse(this.responseText);
-
 
     console.log(response.hits);
 
     sessionStorage.setItem("food", JSON.stringify(response.hits));
 
     window.location.pathname = "/content/page1.html";
-
     /*
     response.hits.map(dish => {
       makeCard(dish.recipe.label, dish.recipe.ingredients, dish.recipe.image);
@@ -90,14 +81,17 @@ function sendGetRequest(q) {
 
   //sending GET request
   xmlRequest.open("GET", url + q + myApiId + myApiKey);
-  
   xmlRequest.send();
-};
-
+}
 
 function getRecipes() {
   let myFood = JSON.parse(sessionStorage.getItem("food"));
+  let recipe1= myFood[0].recipe;
+  document.getElementById("title1").innerHTML = recipe1.label;
+  document.getElementById("title1.1").innerHTML = recipe1.label;
+
   console.log(myFood);
+  console.log(recipe1.label);
   return myFood;
 }
 const moreFood = getRecipes();
