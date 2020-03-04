@@ -80,10 +80,3 @@ function sendGetRequest(q) {
   xmlRequest.open("GET", url + q + myApiId + myApiKey);
   xmlRequest.send();
 }
-
-function getRecipes() {
-  let myFood = JSON.parse(sessionStorage.getItem("food"));
-  console.log(myFood);
-  return myFood;
-}
-const moreFood = getRecipes();
