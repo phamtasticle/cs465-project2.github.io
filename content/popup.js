@@ -5,20 +5,21 @@ const recipeList = entireFoodArray.map(food => {
 });
 
 const proteinFatCarbs = recipeList.map(PFC => {
+  let serves = PFC.yield;
   let data =
     "Calories: " +
-    Math.floor(PFC.calories) +
+    Math.floor(PFC.calories / serves) +
     "<br/>" +
     "Protein: " +
-    Math.floor(PFC.totalNutrients.PROCNT.quantity) +
+    Math.floor(PFC.totalNutrients.PROCNT.quantity / serves) +
     "g" +
     "<br/>" +
     "Fat: " +
-    Math.floor(PFC.totalNutrients.FAT.quantity) +
+    Math.floor(PFC.totalNutrients.FAT.quantity / serves) +
     "g" +
     "<br/>" +
     "Carbs: " +
-    Math.floor(PFC.totalNutrients.CHOCDF.quantity) +
+    Math.floor(PFC.totalNutrients.CHOCDF.quantity / serves) +
     "g";
   return data;
 });
