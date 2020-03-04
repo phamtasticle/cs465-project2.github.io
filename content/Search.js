@@ -22,9 +22,9 @@ function addSearchItem() {
   //add value to search array
   searchArray.push(item);
   console.log("last item: " + searchArray[searchArray.length - 1]);
-  
+
   //clear search bar
-  $("#searchBar").val('');
+  $("#searchBar").val("");
   return false;
 }
 
@@ -56,8 +56,6 @@ function submitSearch() {
     return;
   }
   sendGetRequest(searchArray);
-
-
 }
 
 function sendGetRequest(q) {
@@ -69,14 +67,11 @@ function sendGetRequest(q) {
   xmlRequest.onload = function() {
     let response = JSON.parse(this.responseText);
 
-
-
     console.log(response.hits);
 
     sessionStorage.setItem("food", JSON.stringify(response.hits));
 
     window.location.pathname = "/content/page1.html";
-
 
     /*
     response.hits.map(dish => {
@@ -88,16 +83,15 @@ function sendGetRequest(q) {
   //sending GET request
   xmlRequest.open("GET", url + q + myApiId + myApiKey);
   xmlRequest.send();
-
 }
 
 function getRecipes() {
   let myFood = JSON.parse(sessionStorage.getItem("food"));
   //Getting the first recipe on the list
-  let recipe1= myFood[0].recipe; 
+  let recipe1 = myFood[0].recipe;
   //Getting the ingredients from the recipe
   let ingredients = recipe1.ingredients;
-  //Getting the different type of documents that will be modifyied 
+  //Getting the different type of documents that will be modifyied
   let title1 = document.getElementsByName("title1");
   let img1 = document.getElementsByName("img1");
   let url = document.getElementsByName("web1");
@@ -107,20 +101,20 @@ function getRecipes() {
   //Counter for, for loops
   let i;
   //Getting the recipe name and posting it on the website
-  for( i=0; i < title1.length; ++i){
+  for (i = 0; i < title1.length; ++i) {
     title1[i].innerHTML = recipe1.label;
   }
-  //Getting the img 
-  for( i=0; i < img1.length; ++i){
-    img1[i].setAttribute('src',recipe1.image);
+  //Getting the img
+  for (i = 0; i < img1.length; ++i) {
+    img1[i].setAttribute("src", recipe1.image);
   }
   //Getting the link to the website
-  for( i=0; i < url.length; ++i){
-    let temp1 = "location.href='" + recipe1.url +"';";
-    url[i].setAttribute('onclick',temp1);
+  for (i = 0; i < url.length; ++i) {
+    let temp1 = "location.href='" + recipe1.url + "';";
+    url[i].setAttribute("onclick", temp1);
   }
   //Getting the ingredients
-  for(i =0; i < ingredients.length; ++i){
+  for (i = 0; i < ingredients.length; ++i) {
     ingredient_list += "<li>" + ingredients[i].text + "</li>";
   }
   //Posting the ingredients to the website
@@ -131,4 +125,3 @@ function getRecipes() {
   return myFood;
 }
 const moreFood = getRecipes();
-
