@@ -27,7 +27,7 @@ const proteinFatCarbs = recipeList.map(PFC => {
 console.log(recipeList);
 
 /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-&&&&&&&&&&&&&&     make card      &&&&&&&&&&&&&&&&*/
+&&&&&&&&&&&&&&     make cards on window load     &&&&&&&&&&&&&&&&*/
 
 window.onload = function() {
   /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
