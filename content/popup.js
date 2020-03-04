@@ -3,16 +3,7 @@ const entireFoodArray = JSON.parse(sessionStorage.getItem("food"));
 const recipeList = entireFoodArray.map(food => {
   return food.recipe;
 });
-/*
-const proteinFatCarbs = recipeList.map(PFC => {
-  return [
-    "Calories: " + PFC.calories,
-    "Protein: " + PFC.totalNutrients.PROCNT.quantity + "g",
-    "Fat: " + PFC.totalNutrients.FAT.quantity + "g",
-    "Carbs: " + PFC.totalNutrients.CHOCDF.quantity + "g"
-  ];
-});
-*/
+
 const proteinFatCarbs = recipeList.map(PFC => {
   let data =
     "Calories: " +
@@ -31,9 +22,8 @@ const proteinFatCarbs = recipeList.map(PFC => {
     "g";
   return data;
 });
-console.log(proteinFatCarbs);
+
 console.log(recipeList);
-console.log(recipeList[0].image);
 
 /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 &&&&&&&&&&&&&&     make card      &&&&&&&&&&&&&&&&*/
@@ -69,5 +59,15 @@ window.onload = function() {
 
   /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 &&&&&&&&&&&&&&     load nutritional info        &&&&&&&&&&&&&&&&*/
+
   document.getElementById("nutrition-one").innerHTML = proteinFatCarbs[0];
+  document.getElementById("nutrition-two").innerHTML = proteinFatCarbs[1];
+  document.getElementById("nutrition-three").innerHTML = proteinFatCarbs[2];
+  document.getElementById("nutrition-four").innerHTML = proteinFatCarbs[3];
+  document.getElementById("nutrition-five").innerHTML = proteinFatCarbs[4];
+  document.getElementById("nutrition-six").innerHTML = proteinFatCarbs[5];
+  document.getElementById("nutrition-seven").innerHTML = proteinFatCarbs[6];
+  document.getElementById("nutrition-eight").innerHTML = proteinFatCarbs[7];
+  document.getElementById("nutrition-nine").innerHTML = proteinFatCarbs[8];
+  document.getElementById("nutrition-ten").innerHTML = proteinFatCarbs[9];
 };
