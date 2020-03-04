@@ -3,6 +3,35 @@ const entireFoodArray = JSON.parse(sessionStorage.getItem("food"));
 const recipeList = entireFoodArray.map(food => {
   return food.recipe;
 });
+/*
+const proteinFatCarbs = recipeList.map(PFC => {
+  return [
+    "Calories: " + PFC.calories,
+    "Protein: " + PFC.totalNutrients.PROCNT.quantity + "g",
+    "Fat: " + PFC.totalNutrients.FAT.quantity + "g",
+    "Carbs: " + PFC.totalNutrients.CHOCDF.quantity + "g"
+  ];
+});
+*/
+const proteinFatCarbs = recipeList.map(PFC => {
+  let data =
+    "Calories: " +
+    Math.floor(PFC.calories) +
+    "<br/>" +
+    "Protein: " +
+    Math.floor(PFC.totalNutrients.PROCNT.quantity) +
+    "g" +
+    "<br/>" +
+    "Fat: " +
+    Math.floor(PFC.totalNutrients.FAT.quantity) +
+    "g" +
+    "<br/>" +
+    "Carbs: " +
+    Math.floor(PFC.totalNutrients.CHOCDF.quantity) +
+    "g";
+  return data;
+});
+console.log(proteinFatCarbs);
 console.log(recipeList);
 console.log(recipeList[0].image);
 
@@ -37,4 +66,8 @@ window.onload = function() {
   document.getElementById("img-eight").src = recipeList[7].image;
   document.getElementById("img-nine").src = recipeList[8].image;
   document.getElementById("img-ten").src = recipeList[9].image;
+
+  /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+&&&&&&&&&&&&&&     load nutritional info        &&&&&&&&&&&&&&&&*/
+  document.getElementById("nutrition-one").innerHTML = proteinFatCarbs[0];
 };
