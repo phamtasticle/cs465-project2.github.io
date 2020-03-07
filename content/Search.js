@@ -52,6 +52,9 @@ function submitSearch() {
     window.alert("Zero ingredients added");
     return;
   }
+
+  sessionStorage.setItem("searchedFoods", searchArray);
+  
   sendGetRequest(searchArray);
 }
 

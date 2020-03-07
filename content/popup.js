@@ -71,4 +71,22 @@ window.onload = function() {
   document.getElementById("nutrition-eight").innerHTML = proteinFatCarbs[7];
   document.getElementById("nutrition-nine").innerHTML = proteinFatCarbs[8];
   document.getElementById("nutrition-ten").innerHTML = proteinFatCarbs[9];
+
+  /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+  &&&&&&&&&&&&    display searched items &&&&&&&&&&&&&&&&&&*/
+ 
+  const foodString = sessionStorage.getItem("searchedFoods");
+  const foodArray = foodString.split(',');
+  const len = foodArray.length;
+
+  for (var i = 0; i < len; ++i) {
+    $(".search_area").append(
+      $("<input></input>").attr({
+        type: "button",
+        class: "btn",
+        value: foodArray[i]
+      })
+    );
+  }
+
 };
