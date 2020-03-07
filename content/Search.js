@@ -3,6 +3,8 @@ let myApiKey = "&app_key=6c85be342a5528cb19c8eed9fc6ab235";
 let myApiId = "&app_id=fc2d8135";
 var searchArray = []; //array to hold keywords to search by
 
+document.getElementById("loadingContainer").style.display = "none";
+
 function addSearchItem() {
   if (searchArray.length >= 10) {
     window.alert("max items already added");
@@ -55,6 +57,7 @@ function submitSearch() {
     window.alert("Zero ingredients added");
     return;
   }
+  document.getElementById("loadingContainer").style.display = "block";
   sendGetRequest(searchArray);
 }
 

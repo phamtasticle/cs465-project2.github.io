@@ -1,10 +1,11 @@
-body{
-    height: 100vh;
-    width: 100vw;
-    color: rgb(104, 199, 49); 
-    max-height: 100vh;
+body {
+  height: 100vh;
+  width: 100vw;
+  color: rgb(104, 199, 49);
+  max-height: 100vh;
 }
 
+<<<<<<< HEAD
 .row{
     height: 100%;
     margin-top: 3rem;
@@ -14,12 +15,22 @@ body{
     padding-left: 3rem;
     text-shadow: -3px 3px 4px #d8d8d8;
     font-family: 'Roboto';
+=======
+.row {
+  height: 100%;
 }
 
-#logo{
-    margin-left: 5rem;
+.display-1 {
+  padding-left: 3rem;
+  text-shadow: -3px 3px 4px #cacaca;
+>>>>>>> Added loading animation on submit
 }
 
+#logo {
+  margin-left: 5rem;
+}
+
+<<<<<<< HEAD
 #formContainer{
     background-color: rgb(235, 235, 235);
     width: 90%;
@@ -27,13 +38,24 @@ body{
     margin-left: 0px;
     border-radius: 10px;
     box-shadow: -3px 3px 8px #cacaca;
+=======
+#formContainer {
+  background-color: rgb(235, 235, 235);
+  width: 90%;
+  height: 85%;
+  margin-left: 0px;
+  margin-top: 3rem;
+  border-radius: 10px;
+  box-shadow: -3px 3px 8px #cacaca;
+>>>>>>> Added loading animation on submit
 }
 
-.searchForm{
-    padding-top: 15px;
-    padding-left: 10px;
+.searchForm {
+  padding-top: 15px;
+  padding-left: 10px;
 }
 
+<<<<<<< HEAD
 #searchGroup{
     display: flex;
     flex-direction: row;
@@ -52,15 +74,30 @@ body{
     width: 85%;
     margin-bottom: 1rem;
     margin-right: 1.5rem;
+=======
+.form-control:focus {
+  border: none;
+  box-shadow: none;
 }
 
-#searchBar:focus{
-    border-color: none;
-    box-shadow: none;
-    background-color: transparent;
-    border-bottom: 2px solid rgb(104, 199, 49); 
+#searchBar {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid rgb(173, 173, 173);
+  border-radius: 0px;
+  width: 90%;
+  margin-bottom: 1rem;
+>>>>>>> Added loading animation on submit
 }
 
+#searchBar:focus {
+  border-color: none;
+  box-shadow: none;
+  background-color: transparent;
+  border-bottom: 2px solid rgb(104, 199, 49);
+}
+
+<<<<<<< HEAD
 .btn:focus{
     box-shadow: none;
 }
@@ -79,25 +116,49 @@ body{
     margin-left: 3px;
     margin-bottom: 5px;
     box-shadow: -3px 3px 8px #d8d8d8;
+=======
+.searchItems,
+.healthLabelItems {
+  background-color: transparent;
+  width: 90%;
+  padding-left: 0px;
+  margin-left: 0px;
 }
 
-.searchInput:hover{
-    background-color: rgba(104, 199, 49, 0.8);
+.searchDisplay,
+.submitButton,
+.labelDisplay {
+  background-color: rgb(104, 199, 49);
+  color: white;
+  border-radius: 18px;
+  margin-left: 3px;
+  margin-bottom: 5px;
+>>>>>>> Added loading animation on submit
 }
 
-.healthLabelContainer{
-    margin-top: 3rem;
+.searchInput:hover {
+  background-color: rgba(104, 199, 49, 0.8);
 }
 
+.healthLabelContainer {
+  margin-top: 3rem;
+}
+
+<<<<<<< HEAD
 #healthLabelSelect{
     width: 90%;
     box-shadow: -3px 3px 8px #d8d8d8;
+=======
+#healthLabelSelect {
+  width: 90%;
+>>>>>>> Added loading animation on submit
 }
 
-#healthLabelSelect:focus{
-    border: 1px solid #ced4da;
+#healthLabelSelect:focus {
+  border: 1px solid #ced4da;
 }
 
+<<<<<<< HEAD
 .submitButton{
     margin-top: 2rem;
     background-color: rgb(255, 255, 255);
@@ -113,3 +174,23 @@ body{
     margin-top: 0px;
     margin-bottom: 1rem;
 }
+=======
+.submitButton {
+  margin-top: 2rem;
+}
+
+.loading-container {
+  display: none;
+  border-radius: 3px;
+  background-color: white;
+  width: 100px;
+  margin: auto auto;
+  position: absolute;
+  height: 100px;
+  left: 45%;
+  top: 40%;
+}
+.loading-box {
+  margin-top: 20px;
+}
+>>>>>>> Added loading animation on submit
