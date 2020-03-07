@@ -1,90 +1,108 @@
-body{
-    height: 100vh;
-    width: 100vw;
-    color: rgb(104, 199, 49); 
-    max-height: 100vh;
+body {
+  height: 100vh;
+  width: 100vw;
+  color: rgb(104, 199, 49);
+  max-height: 100vh;
 }
 
-.row{
-    height: 100%;
+.row {
+  height: 100%;
 }
 
-.display-1{
-    padding-left: 3rem;
-    text-shadow: -3px 3px 4px #cacaca;
+.display-1 {
+  padding-left: 3rem;
+  text-shadow: -3px 3px 4px #cacaca;
 }
 
-#logo{
-    margin-left: 5rem;
+#logo {
+  margin-left: 5rem;
 }
 
-#formContainer{
-    background-color: rgb(235, 235, 235);
-    width: 90%;
-    height: 85%;
-    margin-left: 0px;
-    margin-top: 3rem;
-    border-radius: 10px;
-    box-shadow: -3px 3px 8px #cacaca;
+#formContainer {
+  background-color: rgb(235, 235, 235);
+  width: 90%;
+  height: 85%;
+  margin-left: 0px;
+  margin-top: 3rem;
+  border-radius: 10px;
+  box-shadow: -3px 3px 8px #cacaca;
 }
 
-.searchForm{
-    padding-top: 15px;
-    padding-left: 10px;
+.searchForm {
+  padding-top: 15px;
+  padding-left: 10px;
 }
 
-.form-control:focus{
-    border: none;
-    box-shadow: none;
+.form-control:focus {
+  border: none;
+  box-shadow: none;
 }
 
-#searchBar{
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid rgb(173, 173, 173);
-    border-radius: 0px;
-    width: 90%;
-    margin-bottom: 1rem;
+#searchBar {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid rgb(173, 173, 173);
+  border-radius: 0px;
+  width: 90%;
+  margin-bottom: 1rem;
 }
 
-#searchBar:focus{
-    border-color: none;
-    box-shadow: none;
-    background-color: transparent;
-    border-bottom: 2px solid rgb(104, 199, 49); 
+#searchBar:focus {
+  border-color: none;
+  box-shadow: none;
+  background-color: transparent;
+  border-bottom: 2px solid rgb(104, 199, 49);
 }
 
-.searchItems, .healthLabelItems{
-    background-color: transparent;
-    width: 90%;
-    padding-left: 0px;
-    margin-left: 0px;
+.searchItems,
+.healthLabelItems {
+  background-color: transparent;
+  width: 90%;
+  padding-left: 0px;
+  margin-left: 0px;
 }
 
-.searchDisplay, .submitButton, .labelDisplay{
-    background-color: rgb(104, 199, 49);
-    color: white;
-    border-radius: 18px;
-    margin-left: 3px;
-    margin-bottom: 5px;
+.searchDisplay,
+.submitButton,
+.labelDisplay {
+  background-color: rgb(104, 199, 49);
+  color: white;
+  border-radius: 18px;
+  margin-left: 3px;
+  margin-bottom: 5px;
 }
 
-.searchInput:hover{
-    background-color: rgba(104, 199, 49, 0.8);
+.searchInput:hover {
+  background-color: rgba(104, 199, 49, 0.8);
 }
 
-.healthLabelContainer{
-    margin-top: 3rem;
+.healthLabelContainer {
+  margin-top: 3rem;
 }
 
-#healthLabelSelect{
-    width: 90%;
+#healthLabelSelect {
+  width: 90%;
 }
 
-#healthLabelSelect:focus{
-    border: 1px solid #ced4da;
+#healthLabelSelect:focus {
+  border: 1px solid #ced4da;
 }
 
-.submitButton{
-    margin-top: 2rem;
+.submitButton {
+  margin-top: 2rem;
+}
+
+.loading-container {
+  display: none;
+  border-radius: 3px;
+  background-color: white;
+  width: 100px;
+  margin: auto auto;
+  position: absolute;
+  height: 100px;
+  left: 45%;
+  top: 40%;
+}
+.loading-box {
+  margin-top: 20px;
 }
