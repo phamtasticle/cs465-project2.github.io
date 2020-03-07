@@ -2,8 +2,8 @@ let url = "https://api.edamam.com/search?q=";
 let myApiKey = "&app_key=6c85be342a5528cb19c8eed9fc6ab235";
 let myApiId = "&app_id=fc2d8135";
 var searchArray = []; //array to hold keywords to search by
-
-document.getElementById("loadingContainer").style.display = "none";
+let healthLabelVariable = "&health=";
+console.log(healthLabelVariable.length);
 
 function addSearchItem() {
   if (searchArray.length >= 10) {
@@ -32,14 +32,22 @@ function addSearchItem() {
 
 function addHealthLabel() {
   var label = $("#healthLabelSelect option:selected").text();
+  document.getElementById("healthContainer").innerHTML = "";
 
   $(".healthLabelItems").append(
     $("<input></input>").attr({
+      id: "healthbutton",
       type: "button",
       class: "btn searchDisplay labelDisplay",
       value: label
     })
   );
+  healthLabelVariable = "&health=";
+  let holdString = healthLabelVariable.concat(label);
+  healthLabelVariable = holdString;
+  console.log(healthLabelVariable);
+
+  console.log(label);
 
   return false;
 }
@@ -64,6 +72,7 @@ function submitSearch() {
 function sendGetRequest(q) {
   //second change
   //make request without reloading page
+
   xmlRequest = new XMLHttpRequest();
 
   //if request is succesfull this function happen
@@ -84,7 +93,13 @@ function sendGetRequest(q) {
   };
 
   //sending GET request
-  xmlRequest.open("GET", url + q + myApiId + myApiKey);
+  if (healthLabelVariable == "&health=") {
+    healthLabelVariable = "";
+  }
+  xmlRequest.open(
+    "GET",
+    url + q + myApiId + myApiKey + healthRest + healthLabelVariable
+  );
   xmlRequest.send();
 }
 

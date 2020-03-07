@@ -65,16 +65,17 @@
                 class="form-control"
                 onchange="addHealthLabel()"
               >
-                <option value="dairyFree">Dairy Free</option>
-                <option value="glutenFree">Gluten Free</option>
-                <option value="keto">Keto</option>
+                <option value="dairy-free">Dairy Free</option>
+                <option value="gluten-free">Gluten Free</option>
+                <option value="keto-friendly">Keto</option>
+                <option value="peanut-free">Peanut Free</option>
                 <option value="kosher">Kosher</option>
                 <option value="paleo">Paleo</option>
                 <option value="vegan">Vegan</option>
                 <option value="vegetarian">Vegetarian</option>
               </select>
             </div>
-            <div class="container healthLabelItems">
+            <div id="healthContainer" class="container healthLabelItems">
               <!--Selected health labels will show up in this div as they get searched-->
             </div>
             <button
