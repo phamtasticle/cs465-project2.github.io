@@ -2,8 +2,9 @@ let url = "https://api.edamam.com/search?q=";
 let myApiKey = "&app_key=6c85be342a5528cb19c8eed9fc6ab235";
 let myApiId = "&app_id=fc2d8135";
 var searchArray = []; //array to hold keywords to search by
-let healthLabelVariable = "&health=";
-console.log(healthLabelVariable.length);
+let healthLabelRestrictions = "&health=";
+let 
+console.log(healthLabelRestrictions.length);
 
 function addSearchItem() {
   if (searchArray.length >= 10) {
@@ -39,10 +40,10 @@ function addHealthLabel() {
       value: label
     })
   );
-  healthLabelVariable = "&health=";
-  let holdString = healthLabelVariable.concat(label);
-  healthLabelVariable = holdString;
-  console.log(healthLabelVariable);
+  healthLabelRestrictions = "&health=";
+  let holdString = healthLabelRestrictions.concat(label);
+  healthLabelRestrictions = holdString;
+  console.log(healthLabelRestrictions);
 
   console.log(label);
 
@@ -89,12 +90,12 @@ function sendGetRequest(q) {
   };
 
   //sending GET request
-  if (healthLabelVariable == "&health=") {
-    healthLabelVariable = "";
+  if (healthLabelRestrictions == "&health=") {
+    healthLabelRestrictions = "";
   }
   xmlRequest.open(
     "GET",
-    url + q + myApiId + myApiKey + healthRest + healthLabelVariable
+    url + q + myApiId + myApiKey + healthRest + healthLabelRestrictions
   );
   xmlRequest.send();
 }
