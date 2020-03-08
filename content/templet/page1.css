@@ -1,8 +1,10 @@
+
 body {
   background-color: white;
   height: 100vh;
   width: 100vw;
   padding-top: 25px;
+
 }
 
 img {
@@ -23,8 +25,10 @@ h2 {
   padding-left: 1rem;
 }
 
-.search_area {
-  padding-left: 1rem;
+
+.search_area, .label_area{
+    padding-left: 1rem;
+
 }
 
 .container {
