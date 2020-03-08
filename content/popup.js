@@ -78,7 +78,6 @@ window.onload = function() {
   const foodString = sessionStorage.getItem("searchedFoods");
   const foodArray = foodString.split(",");
   const len = foodArray.length;
-  console.log(foodArray);
 
   for (var i = 0; i < len; ++i) {
     $(".search_area").append(
@@ -126,9 +125,19 @@ function modifySearchItem() {
   if (item.length < 1) {
     return;
   }
+  let k = 0;
+  while (k < foodArray.length) {
+    if (foodArray[k] == item) {
+      window.alert(item + " already added");
+      document.getElementById("resultSearchBar").value = "";
+      return;
+    }
+    ++k;
+  }
+
   document.getElementById("resultSearchBar").value = "";
   foodArray.push(item);
   sessionStorage.setItem("searchedFoods", foodArray);
-  sendGetRequest(foodArray);
   document.getElementById("resultsLoadingContainer").style.display = "block";
+  sendGetRequest(foodArray);
 }
