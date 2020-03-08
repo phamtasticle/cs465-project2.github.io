@@ -18,25 +18,27 @@ function addSearchItem() {
 
   //add button to display on page
   $(".searchItems").append(
-    $("<input></input>").attr({
-      type: "button",
-      class: "btn searchDisplay",
-      value: item
-    })
-    .click(function() { //onclick, food will be removed
-      var val = $(this).val();
-      var len = searchArray.length;
+    $("<input></input>")
+      .attr({
+        type: "button",
+        class: "btn searchDisplay",
+        value: item
+      })
+      .click(function() {
+        //onclick, food will be removed
+        var val = $(this).val();
+        var len = searchArray.length;
 
-      //removing from food array
-      for(var i=0; i<len; ++i){
-          if (searchArray[i] === val){
+        //removing from food array
+        for (var i = 0; i < len; ++i) {
+          if (searchArray[i] === val) {
             searchArray.splice(i, 1);
           }
-      }
+        }
 
-      //removing from html
-      $(this).remove();
-    })
+        //removing from html
+        $(this).remove();
+      })
   );
 
   //clear input after ingredient added.
@@ -84,13 +86,8 @@ function submitSearch() {
     window.alert("Zero ingredients added");
     return;
   }
-
-
   sessionStorage.setItem("searchedFoods", searchArray);
-  
-
-  //document.getElementById("loadingContainer").style.display = "block";
-
+  document.getElementById("loadingContainer").style.display = "block";
   sendGetRequest(searchArray);
 }
 
@@ -109,12 +106,6 @@ function sendGetRequest(q) {
     sessionStorage.setItem("food", JSON.stringify(response.hits));
 
     window.location.pathname = "/content/page1.html";
-
-    /*
-    response.hits.map(dish => {
-      makeCard(dish.recipe.label, dish.recipe.ingredients, dish.recipe.image);
-    });
-    */
   };
 
   //length = 8 means no restriction was added
@@ -125,7 +116,6 @@ function sendGetRequest(q) {
   xmlRequest.open("GET", url + q + myApiId + myApiKey + healthRestrictions);
   xmlRequest.send();
 }
-
 
 function getRecipes() {
   let myFood = JSON.parse(sessionStorage.getItem("food"));
@@ -167,4 +157,3 @@ function getRecipes() {
   return myFood;
 }
 const moreFood = getRecipes();
-
