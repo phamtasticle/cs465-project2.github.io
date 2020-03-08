@@ -11,6 +11,11 @@ function addSearchItem() {
   }
   var item = $("#searchBar").val();
 
+  //empty input, just return
+  if (item.length < 1) {
+    return;
+  }
+
   //add button to display on page
   $(".searchItems").append(
     $("<input></input>").attr({
@@ -19,6 +24,7 @@ function addSearchItem() {
       value: item
     })
   );
+
   //clear input after ingredient added.
   document.getElementById("searchBar").value = "";
 
