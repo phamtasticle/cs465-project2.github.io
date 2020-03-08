@@ -50,6 +50,7 @@
         onclick="location.href = '../index.html';"
       />
     </div>
+    <div class="container">
     <div class="col-8">
       <div class="container" id="resultFormContainer">
         <form action="#" class=" form-inline searchForm">
@@ -58,11 +59,12 @@
               type="search"
               class="form-control"
               id="resultSearchBar"
-              placeholder="Add item"
+              placeholder="Add more items"
             />
             <button
               type="button"
               class="btn submitButton addButton"
+              id="addButton"
               onclick="modifySearchItem()"
             >
               Add
@@ -71,7 +73,6 @@
         </form>
       </div>
     </div>
-    <div class="container">
       <h2>Results for:</h2>
       <div class="search_area">
         <!--searched parameters go here-->
