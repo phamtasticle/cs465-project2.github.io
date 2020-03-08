@@ -17,6 +17,20 @@ function addSearchItem() {
       class: "btn searchDisplay",
       value: item
     })
+    .click(function() { //onclick, food will be removed
+      var val = $(this).val();
+      var len = searchArray.length;
+
+      //removing from food array
+      for(var i=0; i<len; ++i){
+          if (searchArray[i] === val){
+            searchArray.splice(i, 1);
+          }
+      }
+
+      //removing from html
+      $(this).remove();
+    })
   );
 
   //add value to search array
