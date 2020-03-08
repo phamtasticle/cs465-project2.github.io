@@ -122,40 +122,7 @@ function sendGetRequest(q) {
 function getRecipes() {
   let myFood = JSON.parse(sessionStorage.getItem("food"));
   //Getting the first recipe on the list
-  let recipe1 = myFood[0].recipe;
-  //Getting the ingredients from the recipe
-  let ingredients = recipe1.ingredients;
-  //Getting the different type of documents that will be modifyied
-  let title1 = document.getElementsByName("title1");
-  let img1 = document.getElementsByName("img1");
-  let url = document.getElementsByName("web1");
-  let list = document.getElementById("ingredient_list");
-  //Creating an empty string so that it can be filled later on
-  let ingredient_list = "";
-  //Counter for, for loops
-  let i;
-  //Getting the recipe name and posting it on the website
-  for (i = 0; i < title1.length; ++i) {
-    title1[i].innerHTML = recipe1.label;
-  }
-  //Getting the img
-  for (i = 0; i < img1.length; ++i) {
-    img1[i].setAttribute("src", recipe1.image);
-  }
-  //Getting the link to the website
-  for (i = 0; i < url.length; ++i) {
-    let temp1 = "location.href='" + recipe1.url + "';";
-    url[i].setAttribute("onclick", temp1);
-  }
-  //Getting the ingredients
-  for (i = 0; i < ingredients.length; ++i) {
-    ingredient_list += "<li>" + ingredients[i].text + "</li>";
-  }
-  //Posting the ingredients to the website
-  list.innerHTML = ingredient_list;
-
-  console.log(myFood);
-  console.log(ingredient_list);
+  
   return myFood;
 }
 const moreFood = getRecipes();
