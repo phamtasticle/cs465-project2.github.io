@@ -44,10 +44,13 @@ window.onload = function() {
   document.getElementById("name-nine").innerHTML = recipeList[8].label;
   document.getElementById("name-ten").innerHTML = recipeList[9].label;
 
+
+
   /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 &&&&&&&&&&&&&&     load images        &&&&&&&&&&&&&&&&*/
 
   document.getElementById("img-one").src = recipeList[0].image;
+  document.getElementById("modal-img-1").src = recipeList[0].image;
   document.getElementById("img-two").src = recipeList[1].image;
   document.getElementById("img-three").src = recipeList[2].image;
   document.getElementById("img-four").src = recipeList[3].image;
@@ -72,10 +75,20 @@ window.onload = function() {
   document.getElementById("nutrition-nine").innerHTML = proteinFatCarbs[8];
   document.getElementById("nutrition-ten").innerHTML = proteinFatCarbs[9];
 
-
+    /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+&&&&&&&&&&&&&&     Loads Ingredients        &&&&&&&&&&&&&&&&*/
+  let recipe1 = recipeList[0].ingredients;
+  let doc_list = document.getElementById("ingredient_list");
+  let list = ""
+  
+  for (let i = 0; i < recipe1.length; ++i){
+    list += "<li>" + recipe1[i].text + "</li>";
+  }
+  doc_list.innerHTML = list;
   /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
   &&&&&&&&&&&&    display searched items &&&&&&&&&&&&&&&&&&*/
- 
+  
+
   const foodString = sessionStorage.getItem("searchedFoods");
   const foodArray = foodString.split(',');
   const len = foodArray.length;
