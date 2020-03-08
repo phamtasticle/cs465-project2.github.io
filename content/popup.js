@@ -59,41 +59,41 @@ window.onload = function() {
   /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 &&&&&&&&&&&&&&     load images        &&&&&&&&&&&&&&&&*/
 
-  document.getElementById("img-one").src = recipeList[0].image;
-  document.getElementById("img-two").src = recipeList[1].image;
+  document.getElementById("img-one").src   = recipeList[0].image;
+  document.getElementById("img-two").src   = recipeList[1].image;
   document.getElementById("img-three").src = recipeList[2].image;
-  document.getElementById("img-four").src = recipeList[3].image;
-  document.getElementById("img-five").src = recipeList[4].image;
-  document.getElementById("img-six").src = recipeList[5].image;
+  document.getElementById("img-four").src  = recipeList[3].image;
+  document.getElementById("img-five").src  = recipeList[4].image;
+  document.getElementById("img-six").src   = recipeList[5].image;
   document.getElementById("img-seven").src = recipeList[6].image;
   document.getElementById("img-eight").src = recipeList[7].image;
-  document.getElementById("img-nine").src = recipeList[8].image;
-  document.getElementById("img-ten").src = recipeList[9].image;
+  document.getElementById("img-nine").src  = recipeList[8].image;
+  document.getElementById("img-ten").src   = recipeList[9].image;
 
-  document.getElementById("modal-img-1").src = recipeList[0].image;
-  document.getElementById("modal-img-2").src = recipeList[1].image;
-  document.getElementById("modal-img-3").src = recipeList[2].image;
-  document.getElementById("modal-img-4").src = recipeList[3].image;
-  document.getElementById("modal-img-5").src = recipeList[4].image;
-  document.getElementById("modal-img-6").src = recipeList[5].image;
-  document.getElementById("modal-img-7").src = recipeList[6].image;
-  document.getElementById("modal-img-8").src = recipeList[7].image;
-  document.getElementById("modal-img-9").src = recipeList[8].image;
+  document.getElementById("modal-img-1").src  = recipeList[0].image;
+  document.getElementById("modal-img-2").src  = recipeList[1].image;
+  document.getElementById("modal-img-3").src  = recipeList[2].image;
+  document.getElementById("modal-img-4").src  = recipeList[3].image;
+  document.getElementById("modal-img-5").src  = recipeList[4].image;
+  document.getElementById("modal-img-6").src  = recipeList[5].image;
+  document.getElementById("modal-img-7").src  = recipeList[6].image;
+  document.getElementById("modal-img-8").src  = recipeList[7].image;
+  document.getElementById("modal-img-9").src  = recipeList[8].image;
   document.getElementById("modal-img-10").src = recipeList[9].image;
 
   /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 &&&&&&&&&&&&&&     load nutritional info        &&&&&&&&&&&&&&&&*/
 
-  document.getElementById("nutrition-one").innerHTML = proteinFatCarbs[0];
-  document.getElementById("nutrition-two").innerHTML = proteinFatCarbs[1];
-  document.getElementById("nutrition-three").innerHTML = proteinFatCarbs[2];
-  document.getElementById("nutrition-four").innerHTML = proteinFatCarbs[3];
-  document.getElementById("nutrition-five").innerHTML = proteinFatCarbs[4];
-  document.getElementById("nutrition-six").innerHTML = proteinFatCarbs[5];
-  document.getElementById("nutrition-seven").innerHTML = proteinFatCarbs[6];
-  document.getElementById("nutrition-eight").innerHTML = proteinFatCarbs[7];
-  document.getElementById("nutrition-nine").innerHTML = proteinFatCarbs[8];
-  document.getElementById("nutrition-ten").innerHTML = proteinFatCarbs[9];
+  document.getElementById("nutrition-one").innerHTML    = proteinFatCarbs[0];
+  document.getElementById("nutrition-two").innerHTML    = proteinFatCarbs[1];
+  document.getElementById("nutrition-three").innerHTML  = proteinFatCarbs[2];
+  document.getElementById("nutrition-four").innerHTML   = proteinFatCarbs[3];
+  document.getElementById("nutrition-five").innerHTML   = proteinFatCarbs[4];
+  document.getElementById("nutrition-six").innerHTML    = proteinFatCarbs[5];
+  document.getElementById("nutrition-seven").innerHTML  = proteinFatCarbs[6];
+  document.getElementById("nutrition-eight").innerHTML  = proteinFatCarbs[7];
+  document.getElementById("nutrition-nine").innerHTML   = proteinFatCarbs[8];
+  document.getElementById("nutrition-ten").innerHTML    = proteinFatCarbs[9];
 
     /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 &&&&&&&&&&&&&&     Loads Ingredients        &&&&&&&&&&&&&&&&*/
