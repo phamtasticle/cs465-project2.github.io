@@ -265,6 +265,20 @@ window.onload = function() {
         class: "btn",
         value: healthLabel
       })
+      .click(function() {
+        //onclick, health label will be removed
+
+        //updating health label in sessionStorage
+        sessionStorage.setItem("healthLabel", "");
+       
+        //removing from html
+        $(this).remove();
+
+        //reload results on results page once removed
+        document.getElementById("resultsLoadingContainer").style.display =
+          "block";
+        sendGetRequest(foodArray);
+      })
     );
   }
 
