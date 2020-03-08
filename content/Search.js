@@ -64,10 +64,12 @@ function addHealthLabel() {
   );
   if (label == "Choose one (optional)") {
     document.getElementById("healthContainer").innerHTML = "";
+    sessionStorage.setItem("healthLabel", "");
   } else {
     healthRestrictions = "&health=";
     let holdLabel = healthRestrictions.concat(label);
     healthRestrictions = holdLabel;
+    sessionStorage.setItem("healthLabel", label);
   }
 
   return false;

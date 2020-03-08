@@ -75,7 +75,7 @@ window.onload = function() {
 
   /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
   &&&&&&&&&&&&    display searched items &&&&&&&&&&&&&&&&&&*/
- 
+  
   const foodString = sessionStorage.getItem("searchedFoods");
   const foodArray = foodString.split(',');
   const len = foodArray.length;
@@ -104,6 +104,19 @@ window.onload = function() {
 
         //reload results on results page once removed
         sendGetRequest(foodArray);
+      })
+    );
+  }
+
+  //displaying health label
+  const healthLabel = sessionStorage.getItem("healthLabel");
+
+  if (healthLabel != ""){
+    $(".label_area").append(
+      $("<input></input>").attr({
+        type: "button",
+        class: "btn",
+        value: healthLabel
       })
     );
   }
