@@ -23,6 +23,20 @@ function addSearchItem() {
       class: "btn searchDisplay",
       value: item
     })
+    .click(function() { //onclick, food will be removed
+      var val = $(this).val();
+      var len = searchArray.length;
+
+      //removing from food array
+      for(var i=0; i<len; ++i){
+          if (searchArray[i] === val){
+            searchArray.splice(i, 1);
+          }
+      }
+
+      //removing from html
+      $(this).remove();
+    })
   );
 
   //clear input after ingredient added.
@@ -70,7 +84,13 @@ function submitSearch() {
     window.alert("Zero ingredients added");
     return;
   }
-  document.getElementById("loadingContainer").style.display = "block";
+
+
+  sessionStorage.setItem("searchedFoods", searchArray);
+  
+
+  //document.getElementById("loadingContainer").style.display = "block";
+
   sendGetRequest(searchArray);
 }
 
@@ -105,6 +125,7 @@ function sendGetRequest(q) {
   xmlRequest.open("GET", url + q + myApiId + myApiKey + healthRestrictions);
   xmlRequest.send();
 }
+
 
 function getRecipes() {
   let myFood = JSON.parse(sessionStorage.getItem("food"));
@@ -146,3 +167,4 @@ function getRecipes() {
   return myFood;
 }
 const moreFood = getRecipes();
+

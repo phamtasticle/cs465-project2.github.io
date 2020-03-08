@@ -71,4 +71,41 @@ window.onload = function() {
   document.getElementById("nutrition-eight").innerHTML = proteinFatCarbs[7];
   document.getElementById("nutrition-nine").innerHTML = proteinFatCarbs[8];
   document.getElementById("nutrition-ten").innerHTML = proteinFatCarbs[9];
+
+
+  /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+  &&&&&&&&&&&&    display searched items &&&&&&&&&&&&&&&&&&*/
+ 
+  const foodString = sessionStorage.getItem("searchedFoods");
+  const foodArray = foodString.split(',');
+  const len = foodArray.length;
+
+  for (var i = 0; i < len; ++i) {
+    $(".search_area").append(
+      $("<input></input>").attr({
+        type: "button",
+        class: "btn",
+        value: foodArray[i]
+      })
+      .click(function() { //onclick, food will be removed
+        var val = $(this).val();
+        
+        //removing from food array
+        for(var j=0; j<len; ++j){
+            if (foodArray[j] === val){
+              foodArray.splice(j, 1);
+            }
+        }
+        //updating food array in sessionStorage
+        sessionStorage.setItem("searchedFoods", foodArray);
+
+        //removing from html
+        $(this).remove();
+
+        //reload results on results page once removed
+        sendGetRequest(foodArray);
+      })
+    );
+  }
+
 };
