@@ -95,6 +95,10 @@ window.onload = function() {
   document.getElementById("nutrition-nine").innerHTML   = proteinFatCarbs[8];
   document.getElementById("nutrition-ten").innerHTML    = proteinFatCarbs[9];
 
+
+  /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+  &&&&&&&&&&&&    display searched items &&&&&&&&&&&&&&&&&&*/
+
     /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 &&&&&&&&&&&&&&     Loads Ingredients        &&&&&&&&&&&&&&&&*/
   let recipe = recipeList[0].ingredients;
@@ -214,35 +218,84 @@ window.onload = function() {
   
 
   const foodString = sessionStorage.getItem("searchedFoods");
-  const foodArray = foodString.split(',');
+  const foodArray = foodString.split(",");
   const len = foodArray.length;
 
   for (var i = 0; i < len; ++i) {
     $(".search_area").append(
+      $("<input></input>")
+        .attr({
+          type: "button",
+          class: "btn",
+          value: foodArray[i]
+        })
+        .click(function() {
+          //onclick, food will be removed
+          var val = $(this).val();
+
+          //removing from food array
+          for (var j = 0; j < len; ++j) {
+            if (foodArray[j] === val) {
+              foodArray.splice(j, 1);
+            }
+          }
+          //updating food array in sessionStorage
+          sessionStorage.setItem("searchedFoods", foodArray);
+
+          //removing from html
+          $(this).remove();
+
+          //reload results on results page once removed
+
+          document.getElementById("resultsLoadingContainer").style.display =
+            "block";
+          sendGetRequest(foodArray);
+        })
+    );
+  }
+
+
+  //displaying health label
+  const healthLabel = sessionStorage.getItem("healthLabel");
+
+  if (healthLabel != ""){
+    $(".label_area").append(
       $("<input></input>").attr({
         type: "button",
         class: "btn",
-        value: foodArray[i]
-      })
-      .click(function() { //onclick, food will be removed
-        var val = $(this).val();
-        
-        //removing from food array
-        for(var j=0; j<len; ++j){
-            if (foodArray[j] === val){
-              foodArray.splice(j, 1);
-            }
-        }
-        //updating food array in sessionStorage
-        sessionStorage.setItem("searchedFoods", foodArray);
-
-        //removing from html
-        $(this).remove();
-
-        //reload results on results page once removed
-        sendGetRequest(foodArray);
+        value: healthLabel
       })
     );
   }
 
+
 };
+function modifySearchItem() {
+  const currentFood = sessionStorage.getItem("searchedFoods");
+  const foodArray = currentFood.split(",");
+  const len = foodArray.length;
+  if (len >= 10) {
+    window.alert("Max items limit of 10 already reached");
+    return;
+  }
+  var item = $("#resultSearchBar").val();
+  //empty input, just return
+  if (item.length < 1) {
+    return;
+  }
+  let k = 0;
+  while (k < foodArray.length) {
+    if (foodArray[k] == item) {
+      window.alert(item + " already added");
+      document.getElementById("resultSearchBar").value = "";
+      return;
+    }
+    ++k;
+  }
+
+  document.getElementById("resultSearchBar").value = "";
+  foodArray.push(item);
+  sessionStorage.setItem("searchedFoods", foodArray);
+  document.getElementById("resultsLoadingContainer").style.display = "block";
+  sendGetRequest(foodArray);
+}

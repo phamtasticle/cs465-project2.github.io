@@ -15,6 +15,15 @@ function addSearchItem() {
   if (item.length < 1) {
     return;
   }
+  let k = 0;
+  while (k < searchArray.length) {
+    if (searchArray[k] == item) {
+      window.alert(item + " already added");
+      document.getElementById("searchBar").value = "";
+      return;
+    }
+    ++k;
+  }
 
   //add button to display on page
   $(".searchItems").append(
@@ -64,10 +73,12 @@ function addHealthLabel() {
   );
   if (label == "Choose one (optional)") {
     document.getElementById("healthContainer").innerHTML = "";
+    sessionStorage.setItem("healthLabel", "");
   } else {
     healthRestrictions = "&health=";
     let holdLabel = healthRestrictions.concat(label);
     healthRestrictions = holdLabel;
+    sessionStorage.setItem("healthLabel", label);
   }
 
   return false;
@@ -105,7 +116,9 @@ function sendGetRequest(q) {
 
     sessionStorage.setItem("food", JSON.stringify(response.hits));
 
-    window.location.pathname = "/content/page1.html";
+    //window.location.pathname = "cs465-project2.github.io/content/page1.html";
+    window.location.pathname = "content/page1.html";
+    
   };
 
   //length = 8 means no restriction was added
