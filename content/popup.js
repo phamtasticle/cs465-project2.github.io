@@ -44,7 +44,7 @@ window.onload = function() {
   document.getElementById("name-nine").innerHTML = recipeList[8].label;
   document.getElementById("name-ten").innerHTML = recipeList[9].label;
 
-
+  document.getElementById("title1").innerHTML = recipeList[0].label;
 
   /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 &&&&&&&&&&&&&&     load images        &&&&&&&&&&&&&&&&*/
@@ -78,13 +78,20 @@ window.onload = function() {
     /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 &&&&&&&&&&&&&&     Loads Ingredients        &&&&&&&&&&&&&&&&*/
   let recipe1 = recipeList[0].ingredients;
-  let doc_list = document.getElementById("ingredient_list");
-  let list = ""
+  let doc_list = document.getElementById("ingredient_list1");
+  let empty_list1 = ""
   
   for (let i = 0; i < recipe1.length; ++i){
-    list += "<li>" + recipe1[i].text + "</li>";
+    empty_list1 += "<li>" + recipe1[i].text + "</li>";
   }
-  doc_list.innerHTML = list;
+  doc_list.innerHTML = empty_list1;
+
+    /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+&&&&&&&&&&&&&&     Loads Links       &&&&&&&&&&&&&&&&*/
+  let url1 = document.getElementById("web1")
+  let temp1 = "location.href='" + recipeList[0].url +"';" ;
+  url1.setAttribute('onclick',temp1);
+  
   /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
   &&&&&&&&&&&&    display searched items &&&&&&&&&&&&&&&&&&*/
   
