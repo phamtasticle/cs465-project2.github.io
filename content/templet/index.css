@@ -1,8 +1,13 @@
-body {
-  height: 100vh;
-  width: 100vw;
-  color: rgb(104, 199, 49);
-  max-height: 100vh;
+@media (max-width: 575px){
+  #formContainer {
+    background-color: rgb(235, 235, 235);
+    width: 90%;
+    height: 85%;
+    margin-left: 0px;
+    border-radius: 10px;
+    box-shadow: -3px 3px 8px #cacaca;
+    position: absolute;
+  }
 }
 
 .row {
