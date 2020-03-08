@@ -24,14 +24,7 @@ function addSearchItem() {
 
   //add value to search array
   searchArray.push(item);
-<<<<<<< HEAD
-  console.log("last item: " + searchArray[searchArray.length - 1]);
-
-  //clear search bar
-  $("#searchBar").val("");
-=======
   console.log(searchArray);
->>>>>>> health label finished officially I hope.
   return false;
 }
 
