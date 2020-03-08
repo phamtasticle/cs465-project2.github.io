@@ -86,6 +86,24 @@ window.onload = function() {
         class: "btn",
         value: foodArray[i]
       })
+      .click(function() { //onclick, food will be removed
+        var val = $(this).val();
+        
+        //removing from food array
+        for(var j=0; j<len; ++j){
+            if (foodArray[j] === val){
+              foodArray.splice(j, 1);
+            }
+        }
+        //updating food array in sessionStorage
+        sessionStorage.setItem("searchedFoods", foodArray);
+
+        //removing from html
+        $(this).remove();
+
+        //reload results on results page once removed
+        sendGetRequest(foodArray);
+      })
     );
   }
 
