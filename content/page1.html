@@ -70,12 +70,12 @@
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </p>
-          <input
-            type="button"
-            class="btn"
-            onclick="location.href='http://google.com';"
-            value="View Full Recipe"
-          />
+          <button type="button" 
+                  class="btn " 
+                  data-toggle="modal" 
+                  data-target="#modal1"> 
+                  More Info 
+                </button>
         </div>
         <div class="card-body col-xs-6">
           <img
@@ -266,7 +266,10 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h3 class="modal-title modal-title" name="title1"></h3>
+            <h3 class="modal-title modal-title" 
+                id="title1">
+
+              </h3>
             <button
               type="button"
               class="close"
@@ -289,7 +292,7 @@
               src="http://placekitten.com/200/100"
               width="200"
               height="200"
-              name="img1"
+              id="modal-img-1"
             />
             <hr />
             <h3>
@@ -303,7 +306,7 @@
             <button
               type="button"
               onclick=""
-              class="btn btn-primary"
+              class="btn"
               name="web1"
             >
               Full website
