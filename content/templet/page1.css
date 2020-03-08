@@ -25,6 +25,11 @@ h2 {
   padding-left: 1rem;
 }
 
+#resultFormContainer{
+    padding-left: 0px;
+}
+
+
 
 .search_area, .label_area{
     padding-left: 1rem;
@@ -67,11 +72,23 @@ h2 {
   border-radius: 18px;
   margin-left: 3px;
   margin-bottom: 5px;
+  box-shadow: -3px 3px 8px #d8d8d8;
 }
 
 .btn:hover {
   background-color: rgba(104, 199, 49, 0.75);
 }
+
+.addButton{
+    background-color: rgb(255, 255, 255);
+    color: rgb(104, 199, 49);
+    border: 2px solid rgb(104, 199, 49);
+    border-radius: 18px;
+    margin-left: 1rem;
+    margin-bottom: 5px;
+    box-shadow: -2px 2px 8px #d8d8d8;
+}
+
 .loading-container {
   display: none;
   border-radius: 3px;
