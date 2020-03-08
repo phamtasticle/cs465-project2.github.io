@@ -72,40 +72,59 @@ window.onload = function() {
   document.getElementById("nutrition-nine").innerHTML = proteinFatCarbs[8];
   document.getElementById("nutrition-ten").innerHTML = proteinFatCarbs[9];
 
-
   /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
   &&&&&&&&&&&&    display searched items &&&&&&&&&&&&&&&&&&*/
- 
+
   const foodString = sessionStorage.getItem("searchedFoods");
-  const foodArray = foodString.split(',');
+  const foodArray = foodString.split(",");
   const len = foodArray.length;
+  console.log(foodArray);
 
   for (var i = 0; i < len; ++i) {
     $(".search_area").append(
-      $("<input></input>").attr({
-        type: "button",
-        class: "btn",
-        value: foodArray[i]
-      })
-      .click(function() { //onclick, food will be removed
-        var val = $(this).val();
-        
-        //removing from food array
-        for(var j=0; j<len; ++j){
-            if (foodArray[j] === val){
+      $("<input></input>")
+        .attr({
+          type: "button",
+          class: "btn",
+          value: foodArray[i]
+        })
+        .click(function() {
+          //onclick, food will be removed
+          var val = $(this).val();
+
+          //removing from food array
+          for (var j = 0; j < len; ++j) {
+            if (foodArray[j] === val) {
               foodArray.splice(j, 1);
             }
-        }
-        //updating food array in sessionStorage
-        sessionStorage.setItem("searchedFoods", foodArray);
+          }
+          //updating food array in sessionStorage
+          sessionStorage.setItem("searchedFoods", foodArray);
 
-        //removing from html
-        $(this).remove();
+          //removing from html
+          $(this).remove();
 
-        //reload results on results page once removed
-        sendGetRequest(foodArray);
-      })
+          //reload results on results page once removed
+          sendGetRequest(foodArray);
+        })
     );
   }
-
 };
+function modifySearchItem() {
+  const currentFood = sessionStorage.getItem("searchedFoods");
+  const foodArray = currentFood.split(",");
+  const len = foodArray.length;
+  if (len >= 10) {
+    window.alert("Max items limit of 10 already reached");
+    return;
+  }
+  var item = $("#resultSearchBar").val();
+  //empty input, just return
+  if (item.length < 1) {
+    return;
+  }
+  document.getElementById("resultSearchBar").value = "";
+  foodArray.push(item);
+  sessionStorage.setItem("searchedFoods", foodArray);
+  sendGetRequest(foodArray);
+}

@@ -4,13 +4,12 @@
     <meta charset="UTF-8" />
 
     <script
-    src="https://code.jquery.com/jquery-3.4.1.js"
-    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous"
-    ></script> 
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
     <script src="Search.js"></script>
     <script src="popup.js"></script>
-
 
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -28,7 +27,6 @@
       crossorigin="anonymous"
     ></script>
 
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link
@@ -39,16 +37,41 @@
     <link rel="stylesheet" type="text/css" href="templet/page1.css" />
 
     <title>Results</title>
-
   </head>
   <body>
     <div class="backButton">
-      <img src="Images/LeafLogo.png" width="60" height="60" onclick="location.href = '../index.html';">
+      <img
+        src="Images/LeafLogo.png"
+        width="60"
+        height="60"
+        onclick="location.href = '../index.html';"
+      />
+    </div>
+    <div class="col-8">
+      <div class="container" id="resultFormContainer">
+        <form action="#" class=" form-inline searchForm">
+          <div class="form-group" id="resultSearchGroup">
+            <input
+              type="search"
+              class="form-control"
+              id="resultSearchBar"
+              placeholder="Add keywords to search by"
+            />
+            <button
+              type="button"
+              class="btn submitButton addButton"
+              onclick="modifySearchItem()"
+            >
+              Add
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
     <div class="container">
       <h2>Results for:</h2>
       <div class="search_area">
-      <!--searched parameters go here-->
+        <!--searched parameters go here-->
       </div>
     </div>
     <!-- The new and improved card START-->
