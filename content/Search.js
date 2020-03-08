@@ -86,6 +86,7 @@ function submitSearch() {
     window.alert("Zero ingredients added");
     return;
   }
+  sessionStorage.setItem("searchedFoods", searchArray);
   document.getElementById("loadingContainer").style.display = "block";
   sendGetRequest(searchArray);
 }
