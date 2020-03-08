@@ -105,6 +105,9 @@ window.onload = function() {
           $(this).remove();
 
           //reload results on results page once removed
+
+          document.getElementById("resultsLoadingContainer").style.display =
+            "block";
           sendGetRequest(foodArray);
         })
     );
@@ -127,4 +130,5 @@ function modifySearchItem() {
   foodArray.push(item);
   sessionStorage.setItem("searchedFoods", foodArray);
   sendGetRequest(foodArray);
+  document.getElementById("resultsLoadingContainer").style.display = "block";
 }

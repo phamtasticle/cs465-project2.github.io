@@ -1,80 +1,84 @@
-body{
-    background-color: white;
-    height: 100vh;
-    width: 100vw;
-    padding-top: 25px;
-    
+body {
+  background-color: white;
+  height: 100vh;
+  width: 100vw;
+  padding-top: 25px;
 }
 
-img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10px;
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
 }
 
-.backButton{
-     position: fixed;
-     bottom: 15px;
-     right: 25px;
+.backButton {
+  position: fixed;
+  bottom: 15px;
+  right: 25px;
 }
 
-h2{
-    display: inline-block;
-    padding-left: 1rem;
+h2 {
+  display: inline-block;
+  padding-left: 1rem;
 }
 
-.search_area{
-    padding-left: 1rem;
+.search_area {
+  padding-left: 1rem;
 }
 
-.container{
-    background-color: transparent;
-    border: transparent;
-    padding-bottom: 20px;
+.container {
+  background-color: transparent;
+  border: transparent;
+  padding-bottom: 20px;
 }
 
-    
-.container > .row{
-    height : auto ; 
-    display: flex;
-    flex-wrap: wrap; 
+.container > .row {
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.card-body{
-    background-color: rgb(235, 235, 235);
-    border-radius:  25px;
-    border: none;
-    width: auto;
-    height: auto;
-    margin: .5rem 1rem;
-    padding: 15px; 
+.card-body {
+  background-color: rgb(235, 235, 235);
+  border-radius: 25px;
+  border: none;
+  width: auto;
+  height: auto;
+  margin: 0.5rem 1rem;
+  padding: 15px;
 
-    max-width: 230px;
-    box-shadow: -3px 3px 8px #cacaca;
+  max-width: 230px;
+  box-shadow: -3px 3px 8px #cacaca;
 }
 
-.card-body:hover{
-    position: relative;
-    bottom: 7px;
+.card-body:hover {
+  position: relative;
+  bottom: 7px;
 }
 
-.btn{
-    background-color: rgb(104, 199, 49);
-    color: white;
-    border-radius: 18px;
-    margin-left: 3px;
-    margin-bottom: 5px
+.btn {
+  background-color: rgb(104, 199, 49);
+  color: white;
+  border-radius: 18px;
+  margin-left: 3px;
+  margin-bottom: 5px;
 }
 
-
-.btn:hover{
-    background-color: rgba(104, 199, 49, 0.75); 
+.btn:hover {
+  background-color: rgba(104, 199, 49, 0.75);
 }
-
-
-  
-
-
- 
-
+.loading-container {
+  display: none;
+  border-radius: 3px;
+  background-color: white;
+  width: 100px;
+  margin: auto auto;
+  position: absolute;
+  height: 100px;
+  left: 45%;
+  top: 40%;
+}
+.loading-box {
+  margin-top: 20px;
+}
