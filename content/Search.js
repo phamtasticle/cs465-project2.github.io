@@ -15,6 +15,15 @@ function addSearchItem() {
   if (item.length < 1) {
     return;
   }
+  let k = 0;
+  while (k < searchArray.length) {
+    if (searchArray[k] == item) {
+      window.alert(item + " already added");
+      document.getElementById("searchBar").value = "";
+      return;
+    }
+    ++k;
+  }
 
   //add button to display on page
   $(".searchItems").append(
