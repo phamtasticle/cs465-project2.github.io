@@ -3,7 +3,7 @@ let myApiKey = "&app_key=6c85be342a5528cb19c8eed9fc6ab235";
 let myApiId = "&app_id=fc2d8135";
 let healthRestrictions = "&health=";
 var searchArray = []; //array to hold keywords to search by
-console.log(healthRestrictions.length);
+
 function addSearchItem() {
   if (searchArray.length >= 10) {
     window.alert("max items already added");
@@ -19,13 +19,19 @@ function addSearchItem() {
       value: item
     })
   );
+  //clear input after ingredient added.
+  document.getElementById("searchBar").value = "";
 
   //add value to search array
   searchArray.push(item);
+<<<<<<< HEAD
   console.log("last item: " + searchArray[searchArray.length - 1]);
 
   //clear search bar
   $("#searchBar").val("");
+=======
+  console.log(searchArray);
+>>>>>>> health label finished officially I hope.
   return false;
 }
 
@@ -43,7 +49,6 @@ function addHealthLabel() {
   );
   if (label == "Choose one (optional)") {
     document.getElementById("healthContainer").innerHTML = "";
-    healthRestrictions = "&health=";
   } else {
     healthRestrictions = "&health=";
     let holdLabel = healthRestrictions.concat(label);
@@ -94,7 +99,7 @@ function sendGetRequest(q) {
   };
 
   //length = 8 means no restriction was added
-  if (healthRestrictions.length == 8) {
+  if (healthRestrictions.length < 9) {
     healthRestrictions = "";
   }
   //sending GET request
