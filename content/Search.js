@@ -49,7 +49,6 @@ function addHealthLabel() {
     let holdLabel = healthRestrictions.concat(label);
     healthRestrictions = holdLabel;
   }
-  console.log(healthRestrictions);
 
   return false;
 }
