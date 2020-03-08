@@ -86,7 +86,11 @@ function sendGetRequest(q) {
     */
   };
 
+  //length = 8 means no restriction was added
+  if (healthRestrictions.length == 8) {
+    healthRestrictions = "";
+  }
   //sending GET request
-  xmlRequest.open("GET", url + q + myApiId + myApiKey + healthRest);
+  xmlRequest.open("GET", url + q + myApiId + myApiKey + healthRestrictions);
   xmlRequest.send();
 }
