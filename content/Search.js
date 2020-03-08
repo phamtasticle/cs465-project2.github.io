@@ -83,11 +83,6 @@ function sendGetRequest(q) {
     sessionStorage.setItem("food", JSON.stringify(response.hits));
 
     window.location.pathname = "/content/page1.html";
-    /*
-    response.hits.map(dish => {
-      makeCard(dish.recipe.label, dish.recipe.ingredients, dish.recipe.image);
-    });
-    */
   };
 
   //length = 8 means no restriction was added
