@@ -7,7 +7,7 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css"
     />
     <script>
       window.onload = localStorage.removeItem("food");
@@ -19,8 +19,8 @@
     ></script>
 
     <script src="content/Search.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="content/templet/index.css" />
-
     <title>Main Page</title>
   </head>
 
@@ -39,13 +39,20 @@
       <div class="col-8">
         <div class="container" id="formContainer">
           <form action="#" class="searchForm">
-            <div class="form-group">
+            <div class="form-group" id="searchGroup">
               <input
                 type="search"
                 class="form-control"
                 id="searchBar"
                 placeholder="Add keywords to search by"
               />
+              <button
+              type="button"
+              class="btn submitButton addButton"
+              onclick="addSearchItem()"
+               >
+              Add
+              </button>
             </div>
             <div class="container searchItems">
               <!--Searched items will show up in this div as they get searched-->
@@ -58,16 +65,14 @@
                 class="form-control"
                 onchange="addHealthLabel()"
               >
-                <option value="dairyFree">Dairy Free</option>
-                <option value="glutenFree">Gluten Free</option>
-                <option value="keto">Keto</option>
-                <option value="kosher">Kosher</option>
-                <option value="paleo">Paleo</option>
-                <option value="vegan">Vegan</option>
-                <option value="vegetarian">Vegetarian</option>
+                <option selected>Choose one (optional)</option>
+                <option value="peanut-free">peanut-free</option>
+                <option value="tree-nut-free">tree-nut-free</option>
+                <option value="vegan">vegan</option>
+                <option value="vegetarian">vegetarian</option>
               </select>
             </div>
-            <div class="container healthLabelItems">
+            <div id="healthContainer" class="container healthLabelItems">
               <!--Selected health labels will show up in this div as they get searched-->
             </div>
             <button
@@ -77,14 +82,18 @@
             >
               Submit
             </button>
-            <button
-              type="button"
-              class="btn submitButton"
-              onclick="addSearchItem()"
-            >
-              Add
-            </button>
           </form>
+        </div>
+      </div>
+    </div>
+    <div
+      id="loadingContainer"
+      class=" text-center loading-container border border-success"
+    >
+      <div class="loading-box">
+        <div class="loading-text">loading...</div>
+        <div id="loading" class="spinner-border text-success" role="status">
+          <span class="sr-only"></span>
         </div>
       </div>
     </div>
