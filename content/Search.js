@@ -41,10 +41,14 @@ function addHealthLabel() {
       value: label
     })
   );
-
-  healthRestrictions = "&health=";
-  let holdLabel = healthRestrictions.concat(label);
-  healthRestrictions = holdLabel;
+  if (label == "Choose one (optional)") {
+    document.getElementById("healthContainer").innerHTML = "";
+    healthRestrictions = "&health=";
+  } else {
+    healthRestrictions = "&health=";
+    let holdLabel = healthRestrictions.concat(label);
+    healthRestrictions = holdLabel;
+  }
   console.log(healthRestrictions);
 
   return false;
