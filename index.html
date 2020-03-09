@@ -61,7 +61,7 @@
               <!--Searched items will show up in this div as they get searched-->
             </div>
             <div class="form-group healthLabelContainer">
-              <label for="healthLabelSelect">Health labels</label>
+              <label for="healthLabelSelect">Health label</label>
               <select
                 name="healthLabels"
                 id="healthLabelSelect"
@@ -71,11 +71,31 @@
                 <option selected>Choose one (optional)</option>
                 <option value="peanut-free">peanut-free</option>
                 <option value="tree-nut-free">tree-nut-free</option>
+                <option value="alcohol-free">alcohol-free</option>
+                <option value="sugar-conscious">sugar-conscious</option>
                 <option value="vegan">vegan</option>
                 <option value="vegetarian">vegetarian</option>
               </select>
             </div>
             <div id="healthContainer" class="container healthLabelItems">
+              <!--Selected health labels will show up in this div as they get searched-->
+            </div>
+            <div class="form-group dietLabelContainer">
+              <label for="dietLabelSelect">Diet Label</label>
+              <select
+                name="dietLabels"
+                id="dietLabelSelect"
+                class="form-control"
+                onchange="addDietLabel()"
+              >
+                <option selected>Choose one (optional)</option>
+                <option value="balanced">balanced</option>
+                <option value="high-protein">high-protein</option>
+                <option value="low-fat">low-fat</option>
+                <option value="low-carb">low-carb</option>
+              </select>
+            </div>
+            <div id="dietContainer" class="container dietLabelItems">
               <!--Selected health labels will show up in this div as they get searched-->
             </div>
             <button

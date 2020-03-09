@@ -2,6 +2,7 @@ let url = "https://api.edamam.com/search?q=";
 let myApiKey = "&app_key=6c85be342a5528cb19c8eed9fc6ab235";
 let myApiId = "&app_id=fc2d8135";
 let healthRestrictions = "&health=";
+let dietRestrictions = "&diet=";
 var searchArray = []; //array to hold keywords to search by
 
 function addSearchItem() {
@@ -87,6 +88,30 @@ function addHealthLabel() {
 
   return false;
 }
+function addDietLabel() {
+  var label = $("#dietLabelSelect option:selected").text();
+  document.getElementById("dietContainer").innerHTML = "";
+
+  $(".dietLabelItems").append(
+    $("<input></input>").attr({
+      id: "dietbutton",
+      type: "button",
+      class: "btn searchDisplay labelDisplay",
+      value: label
+    })
+  );
+  if (label == "Choose one (optional)") {
+    document.getElementById("dietContainer").innerHTML = "";
+    sessionStorage.setItem("dietLabel", "");
+  } else {
+    dietRestrictions = "&diet=";
+    let holdLabel = dietRestrictions.concat(label);
+    dietRestrictions = holdLabel;
+    sessionStorage.setItem("dietLabel", label);
+  }
+
+  return false;
+}
 
 function submitSearch() {
   /*
@@ -120,19 +145,45 @@ function sendGetRequest(q) {
 
     sessionStorage.setItem("food", JSON.stringify(response.hits));
 
-    window.location.pathname = "cs465-project2.github.io/content/page1.html";
-    //window.location.pathname = "content/page1.html";
+    //window.location.pathname = "cs465-project2.github.io/content/page1.html";
+    window.location.pathname = "content/page1.html";
   };
+
+  const healthLabel = sessionStorage.getItem("healthLabel");
+  if (!healthLabel) {
+    healthRestrictions = "";
+  } else {
+    healthRestrictions = "&health=";
+    let holdLabel = healthRestrictions.concat(healthLabel);
+    healthRestrictions = holdLabel;
+    sessionStorage.setItem("healthLabel", healthLabel);
+  }
+
+  const dietLabel = sessionStorage.getItem("dietLabel");
+  if (!dietLabel) {
+    dietRestrictions = "";
+  } else {
+    dietRestrictions = "&diet=";
+    let holddiet = dietRestrictions.concat(dietLabel);
+    dietRestrictions = holddiet;
+    sessionStorage.setItem("dietLabel", dietLabel);
+  }
 
   //length = 8 means no restriction was added
   if (healthRestrictions.length < 9) {
     healthRestrictions = "";
   }
+  //
+  if (dietRestrictions.length < 7) {
+    dietRestrictions = "";
+  }
   //sending GET request
-  xmlRequest.open("GET", url + q + myApiId + myApiKey + healthRestrictions);
+  xmlRequest.open(
+    "GET",
+    url + q + myApiId + myApiKey + healthRestrictions + dietRestrictions
+  );
   xmlRequest.send();
 }
-
 function getRecipes() {
   let myFood = JSON.parse(sessionStorage.getItem("food"));
   //Getting the first recipe on the list

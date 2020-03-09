@@ -247,9 +247,9 @@ window.onload = function() {
           document.getElementById("resultsLoadingContainer").style.display =
             "block";
           if (foodArray.length < 1) {
-            window.location.pathname = "cs465-project2.github.io/";
+            //window.location.pathname = "cs465-project2.github.io/";
             //use for local test
-            //window.location.pathname = "../index.html";
+            window.location.pathname = "../index.html";
             return;
           }
 
@@ -274,6 +274,34 @@ window.onload = function() {
 
           //updating health label in sessionStorage
           sessionStorage.setItem("healthLabel", "");
+
+          //removing from html
+          $(this).remove();
+
+          //reload results on results page once removed
+          document.getElementById("resultsLoadingContainer").style.display =
+            "block";
+          sendGetRequest(foodArray);
+        })
+    );
+  }
+
+  //displaying diet label
+  const dietLabel = sessionStorage.getItem("dietLabel");
+
+  if (dietLabel != "") {
+    $(".label_area").append(
+      $("<input></input>")
+        .attr({
+          type: "button",
+          class: "btn",
+          value: dietLabel
+        })
+        .click(function() {
+          //onclick, health label will be removed
+
+          //updating health label in sessionStorage
+          sessionStorage.setItem("dietLabel", "");
 
           //removing from html
           $(this).remove();
