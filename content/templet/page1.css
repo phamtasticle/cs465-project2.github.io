@@ -112,3 +112,9 @@ h2 {
 .loading-box {
   margin-top: 20px;
 }
+.diet-btn {
+  background-color: orange;
+}
+.health-btn {
+  background-color: green;
+}

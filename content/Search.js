@@ -72,7 +72,7 @@ function addHealthLabel() {
     $("<input></input>").attr({
       id: "healthbutton",
       type: "button",
-      class: "btn searchDisplay labelDisplay",
+      class: "btn searchDisplay labelDisplay health-btn",
       value: label
     })
   );
@@ -96,7 +96,7 @@ function addDietLabel() {
     $("<input></input>").attr({
       id: "dietbutton",
       type: "button",
-      class: "btn searchDisplay labelDisplay",
+      class: "btn searchDisplay labelDisplay diet-btn",
       value: label
     })
   );

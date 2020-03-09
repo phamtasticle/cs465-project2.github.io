@@ -266,7 +266,7 @@ window.onload = function() {
       $("<input></input>")
         .attr({
           type: "button",
-          class: "btn",
+          class: "btn health-btn",
           value: healthLabel
         })
         .click(function() {
@@ -294,7 +294,7 @@ window.onload = function() {
       $("<input></input>")
         .attr({
           type: "button",
-          class: "btn",
+          class: "btn diet-btn",
           value: dietLabel
         })
         .click(function() {
