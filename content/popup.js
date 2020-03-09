@@ -246,6 +246,12 @@ window.onload = function() {
 
           document.getElementById("resultsLoadingContainer").style.display =
             "block";
+          if (foodArray.length < 1) {
+            //window.location.pathname = "cs465-project2.github.io/";
+            window.location.pathname = "../index.html";
+            return;
+          }
+
           sendGetRequest(foodArray);
         })
     );
