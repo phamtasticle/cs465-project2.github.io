@@ -65,6 +65,11 @@ body {
   box-shadow: none;
 }
 
+.btn:hover{
+  color: white;
+  opacity: 0.8;
+}
+
 .searchItems,
 .healthLabelItems {
   background-color: transparent;

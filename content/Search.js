@@ -116,8 +116,8 @@ function sendGetRequest(q) {
 
     sessionStorage.setItem("food", JSON.stringify(response.hits));
 
-    window.location.pathname = "cs465-project2.github.io/content/page1.html";
-    //window.location.pathname = "content/page1.html";
+    //window.location.pathname = "cs465-project2.github.io/content/page1.html";
+    window.location.pathname = "content/page1.html";
     
   };
 
