@@ -17,8 +17,12 @@ function addSearchItem() {
   }
   let k = 0;
   while (k < searchArray.length) {
-    if (searchArray[k] == item) {
-      window.alert(item + " already added");
+    let str1 = JSON.stringify(searchArray[k]);
+    let itemOne = JSON.stringify(item);
+    let res = str1.toUpperCase();
+    let itemRes = itemOne.toUpperCase();
+    if (res == itemRes) {
+      window.alert(item + " already added.");
       document.getElementById("searchBar").value = "";
       return;
     }
@@ -116,9 +120,8 @@ function sendGetRequest(q) {
 
     sessionStorage.setItem("food", JSON.stringify(response.hits));
 
-    //window.location.pathname = "cs465-project2.github.io/content/page1.html";
-    window.location.pathname = "content/page1.html";
-    
+    window.location.pathname = "cs465-project2.github.io/content/page1.html";
+    //window.location.pathname = "content/page1.html";
   };
 
   //length = 8 means no restriction was added
@@ -133,7 +136,7 @@ function sendGetRequest(q) {
 function getRecipes() {
   let myFood = JSON.parse(sessionStorage.getItem("food"));
   //Getting the first recipe on the list
-  
+
   return myFood;
 }
 const moreFood = getRecipes();
