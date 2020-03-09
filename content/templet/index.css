@@ -65,13 +65,14 @@ body {
   box-shadow: none;
 }
 
-.btn:hover{
+.btn:hover {
   color: white;
   opacity: 0.8;
 }
 
 .searchItems,
-.healthLabelItems {
+.healthLabelItems,
+.dietLabelItems {
   background-color: transparent;
   width: 90%;
   padding-left: 0px;
@@ -96,13 +97,23 @@ body {
 .healthLabelContainer {
   margin-top: 3rem;
 }
+.dietLabelContainer {
+  margin-top: 3rem;
+}
 
 #healthLabelSelect {
   width: 90%;
   box-shadow: -3px 3px 8px #d8d8d8;
 }
+#dietLabelSelect {
+  width: 90%;
+  box-shadow: -3px 3px 8px #d8d8d8;
+}
 
 #healthLabelSelect:focus {
+  border: 1px solid #ced4da;
+}
+#dietLabelSelect:focus {
   border: 1px solid #ced4da;
 }
 
@@ -136,4 +147,10 @@ body {
 }
 .loading-box {
   margin-top: 20px;
+}
+.diet-btn {
+  background-color: orange;
+}
+.health-btn {
+  background-color: green;
 }

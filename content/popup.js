@@ -266,7 +266,7 @@ window.onload = function() {
       $("<input></input>")
         .attr({
           type: "button",
-          class: "btn",
+          class: "btn health-btn",
           value: healthLabel
         })
         .click(function() {
@@ -274,6 +274,34 @@ window.onload = function() {
 
           //updating health label in sessionStorage
           sessionStorage.setItem("healthLabel", "");
+
+          //removing from html
+          $(this).remove();
+
+          //reload results on results page once removed
+          document.getElementById("resultsLoadingContainer").style.display =
+            "block";
+          sendGetRequest(foodArray);
+        })
+    );
+  }
+
+  //displaying diet label
+  const dietLabel = sessionStorage.getItem("dietLabel");
+
+  if (dietLabel != "") {
+    $(".label_area").append(
+      $("<input></input>")
+        .attr({
+          type: "button",
+          class: "btn diet-btn",
+          value: dietLabel
+        })
+        .click(function() {
+          //onclick, health label will be removed
+
+          //updating health label in sessionStorage
+          sessionStorage.setItem("dietLabel", "");
 
           //removing from html
           $(this).remove();
