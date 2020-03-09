@@ -54,7 +54,6 @@ window.onload = function() {
   document.getElementById("title8").innerHTML = recipeList[7].label;
   document.getElementById("title9").innerHTML = recipeList[8].label;
   document.getElementById("title10").innerHTML = recipeList[9].label;
-  
 
   /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 &&&&&&&&&&&&&&     load images        &&&&&&&&&&&&&&&&*/
@@ -95,127 +94,125 @@ window.onload = function() {
   document.getElementById("nutrition-nine").innerHTML = proteinFatCarbs[8];
   document.getElementById("nutrition-ten").innerHTML = proteinFatCarbs[9];
 
-
   /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
   &&&&&&&&&&&&    display searched items &&&&&&&&&&&&&&&&&&*/
 
-    /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+  /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 &&&&&&&&&&&&&&     Loads Ingredients        &&&&&&&&&&&&&&&&*/
   let recipe = recipeList[0].ingredients;
-  let empty_list = ""
-  
-  for (let i = 0; i < recipe.length; ++i){
+  let empty_list = "";
+
+  for (let i = 0; i < recipe.length; ++i) {
     empty_list += "<li>" + recipe[i].text + "</li>";
   }
   document.getElementById("ingredient_list1").innerHTML = empty_list;
 
   recipe = recipeList[1].ingredients;
-  empty_list = ""
+  empty_list = "";
 
-  for (let i = 0; i < recipe.length; ++i){
+  for (let i = 0; i < recipe.length; ++i) {
     empty_list += "<li>" + recipe[i].text + "</li>";
   }
   document.getElementById("ingredient_list2").innerHTML = empty_list;
 
   recipe = recipeList[2].ingredients;
-  empty_list = ""
+  empty_list = "";
 
-  for (let i = 0; i < recipe.length; ++i){
+  for (let i = 0; i < recipe.length; ++i) {
     empty_list += "<li>" + recipe[i].text + "</li>";
   }
   document.getElementById("ingredient_list3").innerHTML = empty_list;
 
   recipe = recipeList[3].ingredients;
-  empty_list = ""
+  empty_list = "";
 
-  for (let i = 0; i < recipe.length; ++i){
+  for (let i = 0; i < recipe.length; ++i) {
     empty_list += "<li>" + recipe[i].text + "</li>";
   }
   document.getElementById("ingredient_list4").innerHTML = empty_list;
 
   recipe = recipeList[4].ingredients;
-  empty_list = ""
+  empty_list = "";
 
-  for (let i = 0; i < recipe.length; ++i){
+  for (let i = 0; i < recipe.length; ++i) {
     empty_list += "<li>" + recipe[i].text + "</li>";
   }
   document.getElementById("ingredient_list5").innerHTML = empty_list;
 
   recipe = recipeList[5].ingredients;
-  empty_list = ""
+  empty_list = "";
 
-  for (let i = 0; i < recipe.length; ++i){
+  for (let i = 0; i < recipe.length; ++i) {
     empty_list += "<li>" + recipe[i].text + "</li>";
   }
   document.getElementById("ingredient_list6").innerHTML = empty_list;
 
   recipe = recipeList[6].ingredients;
-  empty_list = ""
+  empty_list = "";
 
-  for (let i = 0; i < recipe.length; ++i){
+  for (let i = 0; i < recipe.length; ++i) {
     empty_list += "<li>" + recipe[i].text + "</li>";
   }
   document.getElementById("ingredient_list7").innerHTML = empty_list;
 
   recipe = recipeList[7].ingredients;
-  empty_list = ""
+  empty_list = "";
 
-  for (let i = 0; i < recipe.length; ++i){
+  for (let i = 0; i < recipe.length; ++i) {
     empty_list += "<li>" + recipe[i].text + "</li>";
   }
   document.getElementById("ingredient_list8").innerHTML = empty_list;
 
   recipe = recipeList[8].ingredients;
-  empty_list = ""
+  empty_list = "";
 
-  for (let i = 0; i < recipe.length; ++i){
+  for (let i = 0; i < recipe.length; ++i) {
     empty_list += "<li>" + recipe[i].text + "</li>";
   }
   document.getElementById("ingredient_list9").innerHTML = empty_list;
 
   recipe = recipeList[9].ingredients;
-  empty_list = ""
+  empty_list = "";
 
-  for (let i = 0; i < recipe.length; ++i){
+  for (let i = 0; i < recipe.length; ++i) {
     empty_list += "<li>" + recipe[i].text + "</li>";
   }
   document.getElementById("ingredient_list10").innerHTML = empty_list;
 
-    /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+  /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 &&&&&&&&&&&&&&     Loads Links       &&&&&&&&&&&&&&&&*/
-  
-  let temp = "location.href='" + recipeList[0].url +"';" ;
-  document.getElementById("web1").setAttribute('onclick',temp);
-  
-  temp = "location.href='" + recipeList[1].url +"';" ;
-  document.getElementById("web2").setAttribute('onclick',temp);
 
-  temp = "location.href='" + recipeList[2].url +"';" ;
-  document.getElementById("web3").setAttribute('onclick',temp);
+  let temp = "location.href='" + recipeList[0].url + "';";
+  document.getElementById("web1").setAttribute("onclick", temp);
 
-  temp = "location.href='" + recipeList[3].url +"';" ;
-  document.getElementById("web4").setAttribute('onclick',temp);
+  temp = "location.href='" + recipeList[1].url + "';";
+  document.getElementById("web2").setAttribute("onclick", temp);
 
-  temp = "location.href='" + recipeList[4].url +"';" ;
-  document.getElementById("web5").setAttribute('onclick',temp);
+  temp = "location.href='" + recipeList[2].url + "';";
+  document.getElementById("web3").setAttribute("onclick", temp);
 
-  temp = "location.href='" + recipeList[5].url +"';" ;
-  document.getElementById("web6").setAttribute('onclick',temp);
+  temp = "location.href='" + recipeList[3].url + "';";
+  document.getElementById("web4").setAttribute("onclick", temp);
 
-  temp = "location.href='" + recipeList[6].url +"';" ;
-  document.getElementById("web7").setAttribute('onclick',temp);
+  temp = "location.href='" + recipeList[4].url + "';";
+  document.getElementById("web5").setAttribute("onclick", temp);
 
-  temp = "location.href='" + recipeList[7].url +"';" ;
-  document.getElementById("web8").setAttribute('onclick',temp);
+  temp = "location.href='" + recipeList[5].url + "';";
+  document.getElementById("web6").setAttribute("onclick", temp);
 
-  temp = "location.href='" + recipeList[8].url +"';" ;
-  document.getElementById("web9").setAttribute('onclick',temp);
+  temp = "location.href='" + recipeList[6].url + "';";
+  document.getElementById("web7").setAttribute("onclick", temp);
 
-  temp = "location.href='" + recipeList[9].url +"';" ;
-  document.getElementById("web10").setAttribute('onclick',temp);
+  temp = "location.href='" + recipeList[7].url + "';";
+  document.getElementById("web8").setAttribute("onclick", temp);
+
+  temp = "location.href='" + recipeList[8].url + "';";
+  document.getElementById("web9").setAttribute("onclick", temp);
+
+  temp = "location.href='" + recipeList[9].url + "';";
+  document.getElementById("web10").setAttribute("onclick", temp);
   /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
   &&&&&&&&&&&&    display searched items &&&&&&&&&&&&&&&&&&*/
-  
 
   const foodString = sessionStorage.getItem("searchedFoods");
   const foodArray = foodString.split(",");
@@ -249,41 +246,50 @@ window.onload = function() {
 
           document.getElementById("resultsLoadingContainer").style.display =
             "block";
+          if (foodArray.length < 1) {
+            window.location.pathname = "cs465-project2.github.io/";
+            //use for local test
+            //window.location.pathname = "../index.html";
+            return;
+          }
+
           sendGetRequest(foodArray);
         })
     );
   }
 
-
   //displaying health label
   const healthLabel = sessionStorage.getItem("healthLabel");
 
-  if (healthLabel != ""){
+  if (healthLabel != "") {
     $(".label_area").append(
-      $("<input></input>").attr({
-        type: "button",
-        class: "btn",
-        value: healthLabel
-      })
-      .click(function() {
-        //onclick, health label will be removed
+      $("<input></input>")
+        .attr({
+          type: "button",
+          class: "btn",
+          value: healthLabel
+        })
+        .click(function() {
+          //onclick, health label will be removed
 
-        //updating health label in sessionStorage
-        sessionStorage.setItem("healthLabel", "");
-       
-        //removing from html
-        $(this).remove();
+          //updating health label in sessionStorage
+          sessionStorage.setItem("healthLabel", "");
 
-        //reload results on results page once removed
-        document.getElementById("resultsLoadingContainer").style.display =
-          "block";
-        sendGetRequest(foodArray);
-      })
+          //removing from html
+          $(this).remove();
+
+          //reload results on results page once removed
+          document.getElementById("resultsLoadingContainer").style.display =
+            "block";
+          sendGetRequest(foodArray);
+        })
     );
   }
-
-
 };
+
+const currentFood = sessionStorage.getItem("searchedFoods");
+const foodArray = currentFood.split(",");
+console.log(foodArray);
 function modifySearchItem() {
   const currentFood = sessionStorage.getItem("searchedFoods");
   const foodArray = currentFood.split(",");
@@ -297,18 +303,25 @@ function modifySearchItem() {
   if (item.length < 1) {
     return;
   }
-  let k = 0;
-  while (k < foodArray.length) {
-    if (foodArray[k] == item) {
-      window.alert(item + " already added");
-      document.getElementById("resultSearchBar").value = "";
-      return;
-    }
-    ++k;
-  }
 
-  document.getElementById("resultSearchBar").value = "";
+  let k = 0;
+  if (foodArray.length > 1) {
+    while (k < foodArray.length) {
+      let str1 = JSON.stringify(foodArray[k]);
+      let itemOne = JSON.stringify(item);
+      let res = str1.toUpperCase();
+      let itemRes = itemOne.toUpperCase();
+      if (res == itemRes) {
+        window.alert(item + " already added.");
+        sessionStorage.setItem("searchedFoods", foodArray);
+        document.getElementById("searchBar").value = "";
+        return;
+      }
+      ++k;
+    }
+  }
   foodArray.push(item);
+  document.getElementById("resultSearchBar").value = "";
   sessionStorage.setItem("searchedFoods", foodArray);
   document.getElementById("resultsLoadingContainer").style.display = "block";
   sendGetRequest(foodArray);
