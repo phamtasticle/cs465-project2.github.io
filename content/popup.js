@@ -256,28 +256,33 @@ window.onload = function() {
 
   if (healthLabel != "") {
     $(".label_area").append(
-      $("<input></input>").attr({
-        type: "button",
-        class: "btn",
-        value: healthLabel
-      })
-      .click(function() {
-        //onclick, health label will be removed
+      $("<input></input>")
+        .attr({
+          type: "button",
+          class: "btn",
+          value: healthLabel
+        })
+        .click(function() {
+          //onclick, health label will be removed
 
-        //updating health label in sessionStorage
-        sessionStorage.setItem("healthLabel", "");
-       
-        //removing from html
-        $(this).remove();
+          //updating health label in sessionStorage
+          sessionStorage.setItem("healthLabel", "");
 
-        //reload results on results page once removed
-        document.getElementById("resultsLoadingContainer").style.display =
-          "block";
-        sendGetRequest(foodArray);
-      })
+          //removing from html
+          $(this).remove();
+
+          //reload results on results page once removed
+          document.getElementById("resultsLoadingContainer").style.display =
+            "block";
+          sendGetRequest(foodArray);
+        })
     );
   }
 };
+
+const currentFood = sessionStorage.getItem("searchedFoods");
+const foodArray = currentFood.split(",");
+console.log(foodArray);
 function modifySearchItem() {
   const currentFood = sessionStorage.getItem("searchedFoods");
   const foodArray = currentFood.split(",");
@@ -291,22 +296,23 @@ function modifySearchItem() {
   if (item.length < 1) {
     return;
   }
-  /*
+
   let k = 0;
-  while (k < foodArray.length) {
-    let str1 = JSON.stringify(foodArray[k]);
-    let itemOne = JSON.stringify(item);
-    let res = str1.toUpperCase();
-    let itemRes = itemOne.toUpperCase();
-    if (res == itemRes) {
-      window.alert(item + " already added.");
-      sessionStorage.setItem("searchedFoods", foodArray);
-      document.getElementById("searchBar").value = "";
-      return;
+  if (foodArray.length > 1) {
+    while (k < foodArray.length) {
+      let str1 = JSON.stringify(foodArray[k]);
+      let itemOne = JSON.stringify(item);
+      let res = str1.toUpperCase();
+      let itemRes = itemOne.toUpperCase();
+      if (res == itemRes) {
+        window.alert(item + " already added.");
+        sessionStorage.setItem("searchedFoods", foodArray);
+        document.getElementById("searchBar").value = "";
+        return;
+      }
+      ++k;
     }
-    ++k;
   }
-*/
   foodArray.push(item);
   document.getElementById("resultSearchBar").value = "";
   sessionStorage.setItem("searchedFoods", foodArray);
