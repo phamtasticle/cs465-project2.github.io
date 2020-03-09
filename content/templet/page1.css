@@ -1,10 +1,8 @@
-
 body {
   background-color: white;
   height: 100vh;
   width: 100vw;
   padding-top: 25px;
-
 }
 
 img {
@@ -12,6 +10,8 @@ img {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10px;
+  border: solid 2px rgb(104, 199, 49);
+  border-radius: 3px;
 }
 
 .backButton {
@@ -25,15 +25,13 @@ h2 {
   padding-left: 1rem;
 }
 
-#resultFormContainer{
-    padding-left: 0px;
+#resultFormContainer {
+  padding-left: 0px;
 }
 
-
-
-.search_area, .label_area{
-    padding-left: 1rem;
-
+.search_area,
+.label_area {
+  padding-left: 1rem;
 }
 
 .container {
@@ -79,14 +77,14 @@ h2 {
   background-color: rgba(104, 199, 49, 0.75);
 }
 
-.addButton{
-    background-color: rgb(255, 255, 255);
-    color: rgb(104, 199, 49);
-    border: 2px solid rgb(104, 199, 49);
-    border-radius: 18px;
-    margin-left: 1rem;
-    margin-bottom: 5px;
-    box-shadow: -2px 2px 8px #d8d8d8;
+.addButton {
+  background-color: rgb(255, 255, 255);
+  color: rgb(104, 199, 49);
+  border: 2px solid rgb(104, 199, 49);
+  border-radius: 18px;
+  margin-left: 1rem;
+  margin-bottom: 5px;
+  box-shadow: -2px 2px 8px #d8d8d8;
 }
 
 .loading-container {
