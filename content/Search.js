@@ -152,6 +152,7 @@ function sendGetRequest(q) {
   const healthLabel = sessionStorage.getItem("healthLabel");
   if (!healthLabel) {
     healthRestrictions = "";
+    sessionStorage.setItem("healthLabel", healthRestrictions);
   } else {
     healthRestrictions = "&health=";
     let holdLabel = healthRestrictions.concat(healthLabel);
@@ -162,6 +163,7 @@ function sendGetRequest(q) {
   const dietLabel = sessionStorage.getItem("dietLabel");
   if (!dietLabel) {
     dietRestrictions = "";
+    sessionStorage.setItem("dietLabel", dietRestrictions);
   } else {
     dietRestrictions = "&diet=";
     let holddiet = dietRestrictions.concat(dietLabel);
