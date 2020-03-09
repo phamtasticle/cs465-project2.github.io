@@ -247,6 +247,8 @@ window.onload = function() {
           document.getElementById("resultsLoadingContainer").style.display =
             "block";
           if (foodArray.length < 1) {
+            sessionStorage.setItem("healthLabel", "");
+            sessionStorage.setItem("dietLabel", "");
             window.location.pathname = "cs465-project2.github.io/";
             //use for local test
             //window.location.pathname = "../index.html";
@@ -353,4 +355,10 @@ function modifySearchItem() {
   sessionStorage.setItem("searchedFoods", foodArray);
   document.getElementById("resultsLoadingContainer").style.display = "block";
   sendGetRequest(foodArray);
+}
+//used to go back to main page and able to reset the health and diet labels
+function goback() {
+  sessionStorage.setItem("healthLabel", "");
+  sessionStorage.setItem("dietLabel", "");
+  window.location.pathname = "../index.html";
 }
