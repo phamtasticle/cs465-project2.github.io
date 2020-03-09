@@ -360,5 +360,5 @@ function modifySearchItem() {
 function goback() {
   sessionStorage.setItem("healthLabel", "");
   sessionStorage.setItem("dietLabel", "");
-  window.location.pathname = "../index.html";
+  window.location.pathname = "cs465-project2.github.io/";
 }
