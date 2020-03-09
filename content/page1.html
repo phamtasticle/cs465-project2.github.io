@@ -36,10 +36,7 @@
     />
     <link rel="stylesheet" type="text/css" href="templet/page1.css" />
 
-
     <title>Food Finder</title>
-
-
   </head>
   <body>
     <div class="backButton">
@@ -51,40 +48,40 @@
       />
     </div>
     <div class="container">
-    <div class="col-8">
-      <div class="container" id="resultFormContainer">
-        <form action="#" class=" form-inline searchForm">
-          <div class="form-group" id="resultSearchGroup">
-            <input
-              type="search"
-              class="form-control"
-              id="resultSearchBar"
-              placeholder="Add more items"
-            />
-            <button
-              type="button"
-              class="btn submitButton addButton"
-              id="addButton"
-              onclick="modifySearchItem()"
-            >
-              Add
-            </button>
-          </div>
-        </form>
+      <div class="col-8">
+        <div class="container" id="resultFormContainer">
+          <form action="#" class=" form-inline searchForm">
+            <div class="form-group" id="resultSearchGroup">
+              <input
+                type="search"
+                class="form-control"
+                id="resultSearchBar"
+                placeholder="Add more items"
+              />
+              <button
+                type="button"
+                class="btn submitButton addButton"
+                id="addButton"
+                onclick="modifySearchItem()"
+              >
+                Add
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
       <h2>Results for:</h2>
       <div class="search_area">
         <!--searched parameters go here-->
       </div>
       <div class="label_area">
-       <!--health labels go here--> 
+        <!--health labels go here-->
       </div>
     </div>
     <!-- The new and improved card START-->
     <div class="container card">
       <div class="row">
-        <div class="card-body col-xs-4" id="test">
+        <div class="card-body col-xs-4 d-flex flex-column" id="test">
           <img
             id="img-one"
             src="/"
@@ -92,96 +89,101 @@
             height="100"
             alt="http://placekitten.com/200/100"
           />
-          <h4 id="name-one" class="card-title ">Card title</h4>
+          <h4 id="name-one" class="card-title mt-auto">Card title</h4>
 
-          <p id="nutrition-one" class="card-text">
-            Info 
-            HERE
+          <p id="nutrition-one" class="card-text mt-auto">
+            Info HERE
           </p>
-          <button type="button" 
-                  class="btn " 
-                  data-toggle="modal" 
-                  data-target="#modal1"> 
-                  More Info 
-                </button>
+          <button
+            type="button"
+            class="btn mt-auto"
+            data-toggle="modal"
+            data-target="#modal1"
+          >
+            More Info
+          </button>
         </div>
-        <div class="card-body col-xs-6">
+        <div class="card-body col-xs-4 d-flex flex-column">
           <img
             id="img-two"
             src="http://placekitten.com/200/100"
             width="180"
             height="100"
           />
-          <h4 id="name-two" class="card-title">Card title</h4>
-          <p id="nutrition-two" class="card-text">
-            Info 
-            HERE
+          <h4 id="name-two" class="card-title mt-auto">Card title</h4>
+          <p id="nutrition-two" class="card-text mt-auto">
+            Info HERE
           </p>
-          <button type="button" 
-                  class="btn " 
-                  data-toggle="modal" 
-                  data-target="#modal2"> 
-                  More Info 
-                </button>
+          <button
+            type="button"
+            class="btn mt-auto"
+            data-toggle="modal"
+            data-target="#modal2"
+          >
+            More Info
+          </button>
         </div>
-        <div class="card-body col-xs-4">
+        <div class="card-body col-xs-4 d-flex flex-column">
           <img
             id="img-three"
             src="http://placekitten.com/200/100"
             width="180"
             height="100"
           />
-          <h4 id="name-three" class="card-title">Card title</h4>
-          <p id="nutrition-three" class="card-text">
-            Info 
-            HERE
+          <h4 id="name-three" class="card-title mt-auto">Card title</h4>
+          <p id="nutrition-three" class="card-text mt-auto">
+            Info HERE
           </p>
-          <button type="button" 
-                  class="btn " 
-                  data-toggle="modal" 
-                  data-target="#modal3"> 
-                  More Info 
-                </button>
+          <button
+            type="button"
+            class="btn mt-auto "
+            data-toggle="modal"
+            data-target="#modal3"
+          >
+            More Info
+          </button>
         </div>
-        <div class="card-body col-xs-4">
+        <div class="card-body col-xs-4 d-flex flex-column">
           <img
             id="img-four"
             src="http://placekitten.com/200/100"
             width="180"
             height="100"
           />
-          <h4 id="name-four" class="card-title">Card title</h4>
-          <p id="nutrition-four" class="card-text">
-            Info 
-            HERE
+          <h4 id="name-four" class="card-title mt-auto">Card title</h4>
+          <p id="nutrition-four" class="card-text mt-auto">
+            Info HERE
           </p>
-          <button type="button" 
-                  class="btn " 
-                  data-toggle="modal" 
-                  data-target="#modal4"> 
-                  More Info 
-                </button>
+          <button
+            type="button"
+            class="btn mt-auto"
+            data-toggle="modal"
+            data-target="#modal4"
+          >
+            More Info
+          </button>
         </div>
-        <div class="card-body col-xs-4">
+        <div class="card-body col-xs-4 d-flex flex-column">
           <img
             id="img-five"
             src="http://placekitten.com/200/100"
             width="180"
             height="100"
           />
-          <h4 id="name-five" class="card-title">Card title</h4>
-          <p id="nutrition-five" class="card-text">
-            Info 
-            HERE
+          <h4 id="name-five" class="card-title mt-auto">Card title</h4>
+          <p id="nutrition-five" class="card-text mt-auto">
+            Info HERE
           </p>
-          <button type="button" 
-                  class="btn " 
-                  data-toggle="modal" 
-                  data-target="#modal5"> 
-                  More Info 
-                </button>
+          <button
+            type="button"
+            class="btn mt-auto"
+            data-toggle="modal"
+            data-target="#modal5"
+          >
+            More Info
+          </button>
         </div>
-        <div class="card-body col-xs-4">
+        <div class="card-body col-xs-4 d-flex flex-column">
           <img
             id="img-six"
             src="http://placekitten.com/200/100"
@@ -189,20 +191,21 @@
             height="100"
           />
 
-          <h4 id="name-six" class="card-title ">Card title</h4>
-          <p id="nutrition-six" class="card-text">
-            Info 
-            HERE
+          <h4 id="name-six" class="card-title mt-auto">Card title</h4>
+          <p id="nutrition-six" class="card-text mt-auto">
+            Info HERE
           </p>
 
-          <button type="button" 
-                  class="btn " 
-                  data-toggle="modal" 
-                  data-target="#modal6"> 
-                  More Info 
-                </button>
+          <button
+            type="button"
+            class="btn mt-auto"
+            data-toggle="modal"
+            data-target="#modal6"
+          >
+            More Info
+          </button>
         </div>
-        <div class="card-body col-xs-4">
+        <div class="card-body col-xs-4 d-flex flex-column">
           <img
             id="img-seven"
             src="http://placekitten.com/200/100"
@@ -210,20 +213,21 @@
             height="100"
           />
 
-          <h4 id="name-seven" class="card-title">Card title</h4>
-          <p id="nutrition-seven" class="card-text">
-            Info 
-            HERE
+          <h4 id="name-seven" class="card-title mt-auto">Card title</h4>
+          <p id="nutrition-seven" class="card-text mt-auto">
+            Info HERE
           </p>
 
-          <button type="button" 
-                  class="btn " 
-                  data-toggle="modal" 
-                  data-target="#modal7"> 
-                  More Info 
-                </button>
+          <button
+            type="button"
+            class="btn mt-auto"
+            data-toggle="modal"
+            data-target="#modal7"
+          >
+            More Info
+          </button>
         </div>
-        <div class="card-body col-xs-4">
+        <div class="card-body col-xs-4 d-flex flex-column">
           <img
             id="img-eight"
             src="http://placekitten.com/200/100"
@@ -231,20 +235,21 @@
             height="100"
           />
 
-          <h4 id="name-eight" class="card-title">Card title</h4>
-          <p id="nutrition-eight" class="card-text">
-            Info 
-            HERE
+          <h4 id="name-eight" class="card-title mt-auto">Card title</h4>
+          <p id="nutrition-eight" class="card-text mt-auto">
+            Info HERE
           </p>
 
-          <button type="button" 
-                  class="btn " 
-                  data-toggle="modal" 
-                  data-target="#modal8"> 
-                  More Info 
-                </button>
+          <button
+            type="button"
+            class="btn mt-auto"
+            data-toggle="modal"
+            data-target="#modal8"
+          >
+            More Info
+          </button>
         </div>
-        <div class="card-body col-xs-4">
+        <div class="card-body col-xs-4 d-flex flex-column">
           <img
             id="img-nine"
             src="http://placekitten.com/200/100"
@@ -252,20 +257,21 @@
             height="100"
           />
 
-          <h4 id="name-nine" class="card-title">Card title</h4>
-          <p id="nutrition-nine" class="card-text">
-            Info 
-            HERE
+          <h4 id="name-nine" class="card-title mt-auto">Card title</h4>
+          <p id="nutrition-nine" class="card-text mt-auto">
+            Info HERE
           </p>
 
-          <button type="button" 
-                  class="btn " 
-                  data-toggle="modal" 
-                  data-target="#modal9"> 
-                  More Info 
-                </button>
+          <button
+            type="button"
+            class="btn mt-auto"
+            data-toggle="modal"
+            data-target="#modal9"
+          >
+            More Info
+          </button>
         </div>
-        <div class="card-body col-xs-4">
+        <div class="card-body col-xs-4 d-flex flex-column">
           <img
             id="img-ten"
             src=""
@@ -274,18 +280,19 @@
             alt="http://placekitten.com/200/100"
           />
 
-          <h4 id="name-ten" class="card-title">Card title</h4>
-          <p id="nutrition-ten" class="card-text">
-            Info 
-            HERE
+          <h4 id="name-ten" class="card-title mt-auto">Card title</h4>
+          <p id="nutrition-ten" class="card-text mt-auto">
+            Info HERE
           </p>
 
-          <button type="button" 
-                  class="btn " 
-                  data-toggle="modal" 
-                  data-target="#modal10"> 
-                  More Info 
-                </button>
+          <button
+            type="button"
+            class="btn mt-auto"
+            data-toggle="modal"
+            data-target="#modal10"
+          >
+            More Info
+          </button>
         </div>
       </div>
     </div>
@@ -295,15 +302,13 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h3 class="modal-title modal-title" 
-                id="title1">
-                
-              </h3>
+            <h3 class="modal-title modal-title" id="title1"></h3>
             <button
               type="button"
               class="close"
               data-dismiss="modal"
-              aria-label="Close">
+              aria-label="Close"
+            >
               <span aria-hidden="true">
                 <img
                   src="Images/LeafLogo.jpg"
@@ -321,8 +326,9 @@
               width="200"
               height="200"
               id="modal-img-1"
-              alt="http://placekitten.com/200/100"/>
-            <hr/>
+              alt="http://placekitten.com/200/100"
+            />
+            <hr />
             <h3>
               Ingredients
             </h3>
@@ -331,17 +337,14 @@
             </ul>
           </div>
           <div class="modal-footer">
-            <button
-              type="button"
-              onclick=""
-              class="btn"
-              id="web1">
+            <button type="button" onclick="" class="btn" id="web1">
               Full website
             </button>
             <button
               type="button"
               class="btn btn-secondary"
-              data-dismiss="modal">
+              data-dismiss="modal"
+            >
               Close
             </button>
           </div>
@@ -354,15 +357,13 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h3 class="modal-title modal-title" 
-                id="title2">
-                
-              </h3>
+            <h3 class="modal-title modal-title" id="title2"></h3>
             <button
               type="button"
               class="close"
               data-dismiss="modal"
-              aria-label="Close">
+              aria-label="Close"
+            >
               <span aria-hidden="true">
                 <img
                   src="Images/LeafLogo.jpg"
@@ -380,8 +381,9 @@
               width="200"
               height="200"
               id="modal-img-2"
-              alt="http://placekitten.com/200/100"/>
-            <hr/>
+              alt="http://placekitten.com/200/100"
+            />
+            <hr />
             <h3>
               Ingredients
             </h3>
@@ -390,17 +392,14 @@
             </ul>
           </div>
           <div class="modal-footer">
-            <button
-              type="button"
-              onclick=""
-              class="btn"
-              id="web2">
+            <button type="button" onclick="" class="btn" id="web2">
               Full website
             </button>
             <button
               type="button"
               class="btn btn-secondary"
-              data-dismiss="modal">
+              data-dismiss="modal"
+            >
               Close
             </button>
           </div>
@@ -413,15 +412,13 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h3 class="modal-title modal-title" 
-                id="title3">
-                
-              </h3>
+            <h3 class="modal-title modal-title" id="title3"></h3>
             <button
               type="button"
               class="close"
               data-dismiss="modal"
-              aria-label="Close">
+              aria-label="Close"
+            >
               <span aria-hidden="true">
                 <img
                   src="Images/LeafLogo.jpg"
@@ -439,8 +436,9 @@
               width="200"
               height="200"
               id="modal-img-3"
-              alt="http://placekitten.com/200/100"/>
-            <hr/>
+              alt="http://placekitten.com/200/100"
+            />
+            <hr />
             <h3>
               Ingredients
             </h3>
@@ -449,17 +447,14 @@
             </ul>
           </div>
           <div class="modal-footer">
-            <button
-              type="button"
-              onclick=""
-              class="btn"
-              id="web3">
+            <button type="button" onclick="" class="btn" id="web3">
               Full website
             </button>
             <button
               type="button"
               class="btn btn-secondary"
-              data-dismiss="modal">
+              data-dismiss="modal"
+            >
               Close
             </button>
           </div>
@@ -472,15 +467,13 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h3 class="modal-title modal-title" 
-                id="title4">
-                
-              </h3>
+            <h3 class="modal-title modal-title" id="title4"></h3>
             <button
               type="button"
               class="close"
               data-dismiss="modal"
-              aria-label="Close">
+              aria-label="Close"
+            >
               <span aria-hidden="true">
                 <img
                   src="Images/LeafLogo.jpg"
@@ -498,8 +491,9 @@
               width="200"
               height="200"
               id="modal-img-4"
-              alt="http://placekitten.com/200/100"/>
-            <hr/>
+              alt="http://placekitten.com/200/100"
+            />
+            <hr />
             <h3>
               Ingredients
             </h3>
@@ -508,17 +502,14 @@
             </ul>
           </div>
           <div class="modal-footer">
-            <button
-              type="button"
-              onclick=""
-              class="btn"
-              id="web4">
+            <button type="button" onclick="" class="btn" id="web4">
               Full website
             </button>
             <button
               type="button"
               class="btn btn-secondary"
-              data-dismiss="modal">
+              data-dismiss="modal"
+            >
               Close
             </button>
           </div>
@@ -531,15 +522,13 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h3 class="modal-title modal-title" 
-                id="title5">
-                
-              </h3>
+            <h3 class="modal-title modal-title" id="title5"></h3>
             <button
               type="button"
               class="close"
               data-dismiss="modal"
-              aria-label="Close">
+              aria-label="Close"
+            >
               <span aria-hidden="true">
                 <img
                   src="Images/LeafLogo.jpg"
@@ -557,8 +546,9 @@
               width="200"
               height="200"
               id="modal-img-5"
-              alt="http://placekitten.com/200/100"/>
-            <hr/>
+              alt="http://placekitten.com/200/100"
+            />
+            <hr />
             <h3>
               Ingredients
             </h3>
@@ -567,17 +557,14 @@
             </ul>
           </div>
           <div class="modal-footer">
-            <button
-              type="button"
-              onclick=""
-              class="btn"
-              id="web5">
+            <button type="button" onclick="" class="btn" id="web5">
               Full website
             </button>
             <button
               type="button"
               class="btn btn-secondary"
-              data-dismiss="modal">
+              data-dismiss="modal"
+            >
               Close
             </button>
           </div>
@@ -585,22 +572,18 @@
       </div>
     </div>
 
-    
-
     <!-- Modals 6-->
     <div class="modal fade" id="modal6">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h3 class="modal-title modal-title" 
-                id="title6">
-                
-              </h3>
+            <h3 class="modal-title modal-title" id="title6"></h3>
             <button
               type="button"
               class="close"
               data-dismiss="modal"
-              aria-label="Close">
+              aria-label="Close"
+            >
               <span aria-hidden="true">
                 <img
                   src="Images/LeafLogo.jpg"
@@ -618,8 +601,9 @@
               width="200"
               height="200"
               id="modal-img-6"
-              alt="http://placekitten.com/200/100"/>
-            <hr/>
+              alt="http://placekitten.com/200/100"
+            />
+            <hr />
             <h3>
               Ingredients
             </h3>
@@ -628,17 +612,14 @@
             </ul>
           </div>
           <div class="modal-footer">
-            <button
-              type="button"
-              onclick=""
-              class="btn"
-              id="web6">
+            <button type="button" onclick="" class="btn" id="web6">
               Full website
             </button>
             <button
               type="button"
               class="btn btn-secondary"
-              data-dismiss="modal">
+              data-dismiss="modal"
+            >
               Close
             </button>
           </div>
@@ -651,15 +632,13 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h3 class="modal-title modal-title" 
-                id="title7">
-                
-              </h3>
+            <h3 class="modal-title modal-title" id="title7"></h3>
             <button
               type="button"
               class="close"
               data-dismiss="modal"
-              aria-label="Close">
+              aria-label="Close"
+            >
               <span aria-hidden="true">
                 <img
                   src="Images/LeafLogo.jpg"
@@ -677,8 +656,9 @@
               width="200"
               height="200"
               id="modal-img-7"
-              alt="http://placekitten.com/200/100"/>
-            <hr/>
+              alt="http://placekitten.com/200/100"
+            />
+            <hr />
             <h3>
               Ingredients
             </h3>
@@ -687,17 +667,14 @@
             </ul>
           </div>
           <div class="modal-footer">
-            <button
-              type="button"
-              onclick=""
-              class="btn"
-              id="web7">
+            <button type="button" onclick="" class="btn" id="web7">
               Full website
             </button>
             <button
               type="button"
               class="btn btn-secondary"
-              data-dismiss="modal">
+              data-dismiss="modal"
+            >
               Close
             </button>
           </div>
@@ -710,15 +687,13 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h3 class="modal-title modal-title" 
-                id="title8">
-                
-              </h3>
+            <h3 class="modal-title modal-title" id="title8"></h3>
             <button
               type="button"
               class="close"
               data-dismiss="modal"
-              aria-label="Close">
+              aria-label="Close"
+            >
               <span aria-hidden="true">
                 <img
                   src="Images/LeafLogo.jpg"
@@ -736,8 +711,9 @@
               width="200"
               height="200"
               id="modal-img-8"
-              alt="http://placekitten.com/200/100"/>
-            <hr/>
+              alt="http://placekitten.com/200/100"
+            />
+            <hr />
             <h3>
               Ingredients
             </h3>
@@ -746,17 +722,14 @@
             </ul>
           </div>
           <div class="modal-footer">
-            <button
-              type="button"
-              onclick=""
-              class="btn"
-              id="web8">
+            <button type="button" onclick="" class="btn" id="web8">
               Full website
             </button>
             <button
               type="button"
               class="btn btn-secondary"
-              data-dismiss="modal">
+              data-dismiss="modal"
+            >
               Close
             </button>
           </div>
@@ -769,15 +742,13 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h3 class="modal-title modal-title" 
-                id="title9">
-                
-              </h3>
+            <h3 class="modal-title modal-title" id="title9"></h3>
             <button
               type="button"
               class="close"
               data-dismiss="modal"
-              aria-label="Close">
+              aria-label="Close"
+            >
               <span aria-hidden="true">
                 <img
                   src="Images/LeafLogo.jpg"
@@ -795,8 +766,9 @@
               width="200"
               height="200"
               id="modal-img-9"
-              alt="http://placekitten.com/200/100"/>
-            <hr/>
+              alt="http://placekitten.com/200/100"
+            />
+            <hr />
             <h3>
               Ingredients
             </h3>
@@ -805,38 +777,33 @@
             </ul>
           </div>
           <div class="modal-footer">
-            <button
-              type="button"
-              onclick=""
-              class="btn"
-              id="web9">
+            <button type="button" onclick="" class="btn" id="web9">
               Full website
             </button>
             <button
               type="button"
               class="btn btn-secondary"
-              data-dismiss="modal">
+              data-dismiss="modal"
+            >
               Close
             </button>
           </div>
         </div>
       </div>
     </div>
-    
+
     <!-- Modals 10-->
     <div class="modal fade" id="modal10">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h3 class="modal-title modal-title" 
-                id="title10">
-                
-              </h3>
+            <h3 class="modal-title modal-title" id="title10"></h3>
             <button
               type="button"
               class="close"
               data-dismiss="modal"
-              aria-label="Close">
+              aria-label="Close"
+            >
               <span aria-hidden="true">
                 <img
                   src="Images/LeafLogo.jpg"
@@ -854,8 +821,9 @@
               width="200"
               height="200"
               id="modal-img-10"
-              alt="http://placekitten.com/200/100"/>
-            <hr/>
+              alt="http://placekitten.com/200/100"
+            />
+            <hr />
             <h3>
               Ingredients
             </h3>
@@ -864,17 +832,14 @@
             </ul>
           </div>
           <div class="modal-footer">
-            <button
-              type="button"
-              onclick=""
-              class="btn"
-              id="web10">
+            <button type="button" onclick="" class="btn" id="web10">
               Full website
             </button>
             <button
               type="button"
               class="btn btn-secondary"
-              data-dismiss="modal">
+              data-dismiss="modal"
+            >
               Close
             </button>
           </div>
