@@ -75,7 +75,10 @@ h2 {
 }
 
 .btn:hover {
+  /*
   background-color: rgba(104, 199, 49, 0.75);
+  */
+  opacity: 0.8;
   color: white;
 }
 

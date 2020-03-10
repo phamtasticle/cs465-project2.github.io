@@ -264,6 +264,7 @@ window.onload = function() {
   const healthLabel = sessionStorage.getItem("healthLabel");
 
   if (healthLabel != "") {
+    document.getElementById("resultsHealthSelector").style.display = "none";
     $(".label_area").append(
       $("<input></input>")
         .attr({
@@ -292,6 +293,7 @@ window.onload = function() {
   const dietLabel = sessionStorage.getItem("dietLabel");
 
   if (dietLabel != "") {
+    document.getElementById("resultsDietSelector").style.display = "none";
     $(".label_area").append(
       $("<input></input>")
         .attr({
@@ -361,4 +363,91 @@ function goback() {
   sessionStorage.setItem("healthLabel", "");
   sessionStorage.setItem("dietLabel", "");
   window.location.pathname = "cs465-project2.github.io/";
+}
+function resultsAddHealthLabel() {
+  var label = $("#resultHealthLabelSelect option:selected").text();
+
+  if (label == "Choose one (optional)") {
+    sessionStorage.setItem("healthLabel", "");
+    return;
+  }
+  document.getElementById("resultsHealthSelector").style.display = "none";
+  $(".label_area").append(
+    $("<input></input>")
+      .attr({
+        id: "healthbuttonTwo",
+        type: "button",
+        class: "btn searchDisplay labelDisplay health-btn",
+        value: label
+      })
+      .click(function() {
+        //onclick, health label will be removed
+
+        //updating health label in sessionStorage
+        sessionStorage.setItem("healthLabel", "");
+
+        //removing from html
+        $(this).remove();
+
+        //reload results on results page once removed
+        document.getElementById("resultsLoadingContainer").style.display =
+          "block";
+        sendGetRequest(foodArray);
+      })
+  );
+
+  if (label == "Choose one (optional)") {
+    sessionStorage.setItem("healthLabel", "");
+    return;
+  } else {
+    let healthR = "&health=";
+    let holdLabel = healthR.concat(label);
+    healthR = holdLabel;
+    sessionStorage.setItem("healthLabel", label);
+    document.getElementById("resultsLoadingContainer").style.display = "block";
+    sendGetRequest(foodArray);
+  }
+}
+function resultAddDietLabel() {
+  var label = $("#resultsDietLabelSelect option:selected").text();
+  if (label == "Choose one (optional)") {
+    sessionStorage.setItem("healthLabel", "");
+    return;
+  }
+  document.getElementById("resultsDietSelector").style.display = "none";
+
+  $(".label_area").append(
+    $("<input></input>")
+      .attr({
+        id: "dietbuttonTwo",
+        type: "button",
+        class: "btn searchDisplay labelDisplay diet-btn",
+        value: label
+      })
+      .click(function() {
+        //onclick, health label will be removed
+
+        //updating health label in sessionStorage
+        sessionStorage.setItem("dietLabel", "");
+
+        //removing from html
+        $(this).remove();
+
+        //reload results on results page once removed
+        document.getElementById("resultsLoadingContainer").style.display =
+          "block";
+        sendGetRequest(foodArray);
+      })
+  );
+  if (label == "Choose one (optional)") {
+    sessionStorage.setItem("dietLabel", "");
+    return;
+  } else {
+    let dietR = "&diet=";
+    let holdLabel = dietR.concat(label);
+    dietR = holdLabel;
+    sessionStorage.setItem("dietLabel", label);
+    document.getElementById("resultsLoadingContainer").style.display = "block";
+    sendGetRequest(foodArray);
+  }
 }
