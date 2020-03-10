@@ -5,6 +5,13 @@ let healthRestrictions = "&health=";
 let dietRestrictions = "&diet=";
 var searchArray = []; //array to hold keywords to search by
 
+//to make sure the labels are always null when back at the main page.
+
+window.onload = () => {
+  sessionStorage.setItem("healthLabel", "");
+  sessionStorage.setItem("dietLabel", "");
+};
+
 function addSearchItem() {
   if (searchArray.length >= 10) {
     window.alert("max items already added");
@@ -67,15 +74,29 @@ function addSearchItem() {
 function addHealthLabel() {
   var label = $("#healthLabelSelect option:selected").text();
   document.getElementById("healthContainer").innerHTML = "";
+  if (label == "Choose one (optional)") {
+    sessionStorage.setItem("healthLabel", "");
+    return;
+  }
 
   $(".healthLabelItems").append(
-    $("<input></input>").attr({
-      id: "healthbutton",
-      type: "button",
-      class: "btn searchDisplay labelDisplay health-btn",
-      value: label
-    })
+    $("<input></input>")
+      .attr({
+        id: "healthbutton",
+        type: "button",
+        class: "btn searchDisplay labelDisplay health-btn",
+        value: label
+      })
+      .click(function() {
+        sessionStorage.setItem("healthLabel", "");
+
+        //removing from html
+        $(this).remove();
+        document.getElementById("healthLabelSelect").selectedIndex = 0;
+        return;
+      })
   );
+
   if (label == "Choose one (optional)") {
     document.getElementById("healthContainer").innerHTML = "";
     sessionStorage.setItem("healthLabel", "");
@@ -91,14 +112,28 @@ function addHealthLabel() {
 function addDietLabel() {
   var label = $("#dietLabelSelect option:selected").text();
   document.getElementById("dietContainer").innerHTML = "";
+  if (label == "Choose one (optional)") {
+    document.getElementById("dietContainer").innerHTML = "";
+    sessionStorage.setItem("dietLabel", "");
+    return;
+  }
 
   $(".dietLabelItems").append(
-    $("<input></input>").attr({
-      id: "dietbutton",
-      type: "button",
-      class: "btn searchDisplay labelDisplay diet-btn",
-      value: label
-    })
+    $("<input></input>")
+      .attr({
+        id: "dietbutton",
+        type: "button",
+        class: "btn searchDisplay labelDisplay diet-btn",
+        value: label
+      })
+      .click(function() {
+        sessionStorage.setItem("dietLabel", "");
+
+        //removing from html
+        $(this).remove();
+        document.getElementById("dietLabelSelect").selectedIndex = 0;
+        return;
+      })
   );
   if (label == "Choose one (optional)") {
     document.getElementById("dietContainer").innerHTML = "";

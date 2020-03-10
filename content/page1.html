@@ -47,6 +47,7 @@
         onclick="goback()"
       />
     </div>
+
     <div class="container">
       <div class="col-8">
         <div class="container" id="resultFormContainer">
@@ -69,13 +70,46 @@
             </div>
           </form>
         </div>
+        <div id="resultsHealthSelector" class="form-group healthLabelContainer">
+          <label for="healthLabelSelect">Add Health label</label>
+          <select
+            name="healthLabels"
+            id="resultHealthLabelSelect"
+            class="form-control"
+            onchange="resultsAddHealthLabel()"
+          >
+            <option value="default" selected>Choose one (optional)</option>
+            <option value="peanut-free">peanut-free</option>
+            <option value="tree-nut-free">tree-nut-free</option>
+            <option value="alcohol-free">alcohol-free</option>
+            <option value="sugar-conscious">sugar-conscious</option>
+            <option value="vegan">vegan</option>
+            <option value="vegetarian">vegetarian</option>
+          </select>
+        </div>
+        <div id="resultsDietSelector" class="form-group dietLabelContainer">
+          <label for="dietLabelSelect">Add Diet Label</label>
+          <select
+            name="dietLabels"
+            id="resultsDietLabelSelect"
+            class="form-control"
+            onchange="resultAddDietLabel()"
+          >
+            <option selected>Choose one (optional)</option>
+            <option value="balanced">balanced</option>
+            <option value="high-protein">high-protein</option>
+            <option value="low-fat">low-fat</option>
+            <option value="low-carb">low-carb</option>
+          </select>
+        </div>
       </div>
+
       <h2>Results for:</h2>
 
       <div class="search_area">
         <!--searched parameters go here-->
       </div>
-      <div class="label_area">
+      <div id="resultsHealthContainer" class="label_area">
         <!--health labels go here-->
       </div>
     </div>
