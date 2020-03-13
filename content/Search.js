@@ -8,6 +8,8 @@ var searchArray = []; //array to hold keywords to search by
 //to make sure the labels are always null when back at the main page.
 
 window.onload = () => {
+  document.getElementById("searchBar").addEventListener("input", suggestions);
+
   sessionStorage.setItem("healthLabel", "");
   sessionStorage.setItem("dietLabel", "");
 };
@@ -228,3 +230,64 @@ function getRecipes() {
   return myFood;
 }
 const moreFood = getRecipes();
+
+/*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+&&&&&&&&&&&& AUTOCOMPLETE FEATURE &&&&&&&&&&&&&&&&&&&*/
+
+let form = document.querySelector("form");
+let anotherApiId = "038c58e0";
+let anotherApiKey = "83a54763d963b2fa850b419c4b61c61d";
+let autocompleteURL =
+  "https://trackapi.nutritionix.com/v2/search/instant?query=";
+
+function suggestions() {
+  currentInput = document.getElementById("searchBar").value;
+  //empty so do nothing
+  if (currentInput == "") {
+    document.getElementById("autocomplete-results").innerHTML = "";
+    return;
+  }
+  if (currentInput == " " || currentInput == "  ") {
+    document.getElementById("searchBar").value = "";
+    document.getElementById("autocomplete-results").innerHTML = "";
+    return;
+  }
+  callAutocomplete(currentInput);
+}
+
+function callAutocomplete(currentInput) {
+  autocompleteXmlRequest = new XMLHttpRequest();
+
+  autocompleteXmlRequest.onload = function() {
+    let response = JSON.parse(this.responseText);
+    document.getElementById("autocomplete-results").innerHTML = "";
+    if (response.common.length == 0) {
+      document.getElementById("autocomplete-results").innerHTML = "";
+      return;
+    }
+
+    let startWith = response.common.filter(recipe => {
+      const regex = new RegExp(`^${currentInput}`, "gi");
+      return recipe.food_name.match(regex);
+    });
+    console.log(startWith);
+    document.getElementById("autocomplete-results").innerHTML = "";
+    startWith.map(names => {
+      const recipe = document.createElement("DIV");
+      recipe.innerHTML = names.food_name;
+      recipe.addEventListener("click", function(e) {
+        document.getElementById("searchBar").value = this.innerHTML;
+        document.getElementById("autocomplete-results").innerHTML = "";
+      });
+      document.getElementById("autocomplete-results").appendChild(recipe);
+    });
+    if (document.getElementById("searchBar").value == "") {
+      document.getElementById("autocomplete-results").innerHTML = "";
+    }
+  };
+  autocompleteXmlRequest.open("GET", autocompleteURL + currentInput, true);
+  autocompleteXmlRequest.setRequestHeader("x-app-id", anotherApiId);
+  autocompleteXmlRequest.setRequestHeader("x-app-key", anotherApiKey);
+  autocompleteXmlRequest.send();
+}
+//document.getElementById("searchBar").addEventListener("input", suggestions);
