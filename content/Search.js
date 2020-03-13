@@ -276,6 +276,7 @@ const moreFood = getRecipes();
 
 /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 &&&&&&&&&&&& AUTOCOMPLETE FEATURE &&&&&&&&&&&&&&&&&&&*/
+/*
 
 let anotherApiId = "038c58e0";
 let anotherApiKey = "83a54763d963b2fa850b419c4b61c61d";
@@ -343,4 +344,4 @@ function callAutocomplete(currentInput) {
   autocompleteXmlRequest.setRequestHeader("x-app-key", anotherApiKey);
   autocompleteXmlRequest.send();
 }
-//document.getElementById("searchBar").addEventListener("input", suggestions);
+*/
