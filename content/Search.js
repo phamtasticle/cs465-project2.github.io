@@ -14,8 +14,6 @@ window.onload = () => {
   sessionStorage.setItem("dietLabel", "");
 };
 
-
-
 //This function gets called every time the add button is pressed.
 //It will take the value in the search bar and add a button for
 //display with the corresponding value.
@@ -81,8 +79,6 @@ function addSearchItem() {
   return false;
 }
 
-
-
 //this function will add a button for the health
 //label that was selected. This function will be called
 //every time the select element on the form changes
@@ -98,7 +94,7 @@ function addHealthLabel() {
     return;
   }
 
-  //adding a button for the health label that 
+  //adding a button for the health label that
   //was selected
   $(".healthLabelItems").append(
     $("<input></input>")
@@ -109,7 +105,7 @@ function addHealthLabel() {
         value: label
       })
       .click(function() {
-        //onclick, this will be removed 
+        //onclick, this will be removed
 
         //resetting label in sessionStorage
         sessionStorage.setItem("healthLabel", "");
@@ -136,8 +132,6 @@ function addHealthLabel() {
   return false;
 }
 
-
-
 //this function will add a button for the diet
 //label that was selected. This function will be called
 //every time the select element on the form changes
@@ -146,14 +140,14 @@ function addDietLabel() {
   var label = $("#dietLabelSelect option:selected").text();
   document.getElementById("dietContainer").innerHTML = "";
 
-   //if no item is selected, don't add anything
+  //if no item is selected, don't add anything
   if (label == "Choose one (optional)") {
     document.getElementById("dietContainer").innerHTML = "";
     sessionStorage.setItem("dietLabel", "");
     return;
   }
 
-  //adding a button for the diet label that 
+  //adding a button for the diet label that
   //was selected
   $(".dietLabelItems").append(
     $("<input></input>")
@@ -188,8 +182,6 @@ function addDietLabel() {
   return false;
 }
 
-
-
 //this function will get called when the submit
 //button is clicked. It will store the array, display
 //the loading icon and call the sendGetRequest function
@@ -216,8 +208,6 @@ function submitSearch() {
 
   sendGetRequest(searchArray);
 }
-
-
 
 function sendGetRequest(q) {
   //second change
@@ -275,8 +265,6 @@ function sendGetRequest(q) {
   xmlRequest.send();
 }
 
-
-
 function getRecipes() {
   let myFood = JSON.parse(sessionStorage.getItem("food"));
   //Getting the first recipe on the list
@@ -287,8 +275,7 @@ const moreFood = getRecipes();
 
 /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 &&&&&&&&&&&& AUTOCOMPLETE FEATURE &&&&&&&&&&&&&&&&&&&*/
-
-let form = document.querySelector("form");
+/*
 let anotherApiId = "038c58e0";
 let anotherApiKey = "83a54763d963b2fa850b419c4b61c61d";
 let autocompleteURL =
@@ -345,3 +332,5 @@ function callAutocomplete(currentInput) {
   autocompleteXmlRequest.send();
 }
 //document.getElementById("searchBar").addEventListener("input", suggestions);
+
+*/
