@@ -12,17 +12,25 @@ window.onload = () => {
   sessionStorage.setItem("dietLabel", "");
 };
 
+
+
+//This function gets called every time the add button is pressed.
+//It will take the value in the search bar and add a button for
+//display with the corresponding value.
 function addSearchItem() {
   if (searchArray.length >= 10) {
     window.alert("max items already added");
     return;
   }
+
+  //getting the value from the search bar
   var item = $("#searchBar").val();
 
-  //empty input, just return
+  //if empty input, just return
   if (item.length < 1) {
     return;
   }
+
   let k = 0;
   while (k < searchArray.length) {
     let str1 = JSON.stringify(searchArray[k]);
@@ -37,7 +45,7 @@ function addSearchItem() {
     ++k;
   }
 
-  //add button to display on page
+  //adds a button to display on page
   $(".searchItems").append(
     $("<input></input>")
       .attr({
@@ -50,7 +58,7 @@ function addSearchItem() {
         var val = $(this).val();
         var len = searchArray.length;
 
-        //removing from food array
+        //removing from food array that will be sent to API
         for (var i = 0; i < len; ++i) {
           if (searchArray[i] === val) {
             searchArray.splice(i, 1);
@@ -65,20 +73,31 @@ function addSearchItem() {
   //clear input after ingredient added.
   document.getElementById("searchBar").value = "";
 
-  //add value to search array
+  //add value to search array for API
   searchArray.push(item);
   console.log(searchArray);
   return false;
 }
 
+
+
+//this function will add a button for the health
+//label that was selected. This function will be called
+//every time the select element on the form changes
 function addHealthLabel() {
+  //getting health label from selected option
   var label = $("#healthLabelSelect option:selected").text();
+
   document.getElementById("healthContainer").innerHTML = "";
+
+  //if no item is selected, don't add anything
   if (label == "Choose one (optional)") {
     sessionStorage.setItem("healthLabel", "");
     return;
   }
 
+  //adding a button for the health label that 
+  //was selected
   $(".healthLabelItems").append(
     $("<input></input>")
       .attr({
@@ -88,10 +107,14 @@ function addHealthLabel() {
         value: label
       })
       .click(function() {
+        //onclick, this will be removed 
+
+        //resetting label in sessionStorage
         sessionStorage.setItem("healthLabel", "");
 
-        //removing from html
+        //removing label from html
         $(this).remove();
+
         document.getElementById("healthLabelSelect").selectedIndex = 0;
         return;
       })
@@ -104,20 +127,32 @@ function addHealthLabel() {
     healthRestrictions = "&health=";
     let holdLabel = healthRestrictions.concat(label);
     healthRestrictions = holdLabel;
+    //updating health label in SessionStorage
     sessionStorage.setItem("healthLabel", label);
   }
 
   return false;
 }
+
+
+
+//this function will add a button for the diet
+//label that was selected. This function will be called
+//every time the select element on the form changes
 function addDietLabel() {
+  //getting value of diet label from selected option
   var label = $("#dietLabelSelect option:selected").text();
   document.getElementById("dietContainer").innerHTML = "";
+
+   //if no item is selected, don't add anything
   if (label == "Choose one (optional)") {
     document.getElementById("dietContainer").innerHTML = "";
     sessionStorage.setItem("dietLabel", "");
     return;
   }
 
+  //adding a button for the diet label that 
+  //was selected
   $(".dietLabelItems").append(
     $("<input></input>")
       .attr({
@@ -127,6 +162,9 @@ function addDietLabel() {
         value: label
       })
       .click(function() {
+        //onclick, this will be removed
+
+        //resetting diet label in sessionStorage
         sessionStorage.setItem("dietLabel", "");
 
         //removing from html
@@ -148,6 +186,11 @@ function addDietLabel() {
   return false;
 }
 
+
+
+//this function will get called when the submit
+//button is clicked. It will store the array, display
+//the loading icon and call the sendGetRequest function
 function submitSearch() {
   /*
     var len = searchArray.length;
@@ -157,14 +200,22 @@ function submitSearch() {
     }
     */
 
+  //if no foods were added, don't send the
+  //get request
   if (searchArray.length < 1) {
     window.alert("Zero ingredients added");
     return;
   }
+  //storing the food array in sessionStorage
   sessionStorage.setItem("searchedFoods", searchArray);
+
+  //displaying the loading icon
   document.getElementById("loadingContainer").style.display = "block";
+
   sendGetRequest(searchArray);
 }
+
+
 
 function sendGetRequest(q) {
   //second change
@@ -221,6 +272,9 @@ function sendGetRequest(q) {
   );
   xmlRequest.send();
 }
+
+
+
 function getRecipes() {
   let myFood = JSON.parse(sessionStorage.getItem("food"));
   //Getting the first recipe on the list
