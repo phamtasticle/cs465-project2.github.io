@@ -8,11 +8,11 @@ var searchArray = []; //array to hold keywords to search by
 //to make sure the labels are always null when back at the main page.
 
 window.onload = () => {
+  document.getElementById("searchBar").addEventListener("input", suggestions);
+
   sessionStorage.setItem("healthLabel", "");
   sessionStorage.setItem("dietLabel", "");
 };
-
-
 
 //This function gets called every time the add button is pressed.
 //It will take the value in the search bar and add a button for
@@ -79,8 +79,6 @@ function addSearchItem() {
   return false;
 }
 
-
-
 //this function will add a button for the health
 //label that was selected. This function will be called
 //every time the select element on the form changes
@@ -96,7 +94,7 @@ function addHealthLabel() {
     return;
   }
 
-  //adding a button for the health label that 
+  //adding a button for the health label that
   //was selected
   $(".healthLabelItems").append(
     $("<input></input>")
@@ -107,7 +105,7 @@ function addHealthLabel() {
         value: label
       })
       .click(function() {
-        //onclick, this will be removed 
+        //onclick, this will be removed
 
         //resetting label in sessionStorage
         sessionStorage.setItem("healthLabel", "");
@@ -119,7 +117,7 @@ function addHealthLabel() {
         return;
       })
   );
-
+  //makes sure that choose one option is not an actual option
   if (label == "Choose one (optional)") {
     document.getElementById("healthContainer").innerHTML = "";
     sessionStorage.setItem("healthLabel", "");
@@ -134,8 +132,6 @@ function addHealthLabel() {
   return false;
 }
 
-
-
 //this function will add a button for the diet
 //label that was selected. This function will be called
 //every time the select element on the form changes
@@ -144,14 +140,14 @@ function addDietLabel() {
   var label = $("#dietLabelSelect option:selected").text();
   document.getElementById("dietContainer").innerHTML = "";
 
-   //if no item is selected, don't add anything
+  //if no item is selected, don't add anything
   if (label == "Choose one (optional)") {
     document.getElementById("dietContainer").innerHTML = "";
     sessionStorage.setItem("dietLabel", "");
     return;
   }
 
-  //adding a button for the diet label that 
+  //adding a button for the diet label that
   //was selected
   $(".dietLabelItems").append(
     $("<input></input>")
@@ -173,6 +169,7 @@ function addDietLabel() {
         return;
       })
   );
+  //making sure choose one is not an option
   if (label == "Choose one (optional)") {
     document.getElementById("dietContainer").innerHTML = "";
     sessionStorage.setItem("dietLabel", "");
@@ -185,8 +182,6 @@ function addDietLabel() {
 
   return false;
 }
-
-
 
 //this function will get called when the submit
 //button is clicked. It will store the array, display
@@ -215,8 +210,6 @@ function submitSearch() {
   sendGetRequest(searchArray);
 }
 
-
-
 function sendGetRequest(q) {
   //second change
   //make request without reloading page
@@ -230,7 +223,7 @@ function sendGetRequest(q) {
     console.log(response.hits);
 
     sessionStorage.setItem("food", JSON.stringify(response.hits));
-
+    //send user to results page
     window.location.pathname = "cs465-project2.github.io/content/page1.html";
     //window.location.pathname = "content/page1.html";
   };
@@ -273,8 +266,6 @@ function sendGetRequest(q) {
   xmlRequest.send();
 }
 
-
-
 function getRecipes() {
   let myFood = JSON.parse(sessionStorage.getItem("food"));
   //Getting the first recipe on the list
@@ -282,3 +273,75 @@ function getRecipes() {
   return myFood;
 }
 const moreFood = getRecipes();
+
+/*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+&&&&&&&&&&&& AUTOCOMPLETE FEATURE &&&&&&&&&&&&&&&&&&&*/
+/*
+
+let anotherApiId = "038c58e0";
+let anotherApiKey = "83a54763d963b2fa850b419c4b61c61d";
+let autocompleteURL =
+  "https://trackapi.nutritionix.com/v2/search/instant?query=";
+
+function suggestions() {
+  currentInput = document.getElementById("searchBar").value;
+  //empty so do nothing
+  if (currentInput == "") {
+    document.getElementById("autocomplete-results").innerHTML = "";
+    return;
+  }
+  //stops user from starting with white spaces, without this api gets
+  //messed up
+  if (currentInput == " " || currentInput == "  ") {
+    document.getElementById("searchBar").value = "";
+    document.getElementById("autocomplete-results").innerHTML = "";
+    return;
+  }
+
+  callAutocomplete(currentInput);
+}
+
+function callAutocomplete(currentInput) {
+  autocompleteXmlRequest = new XMLHttpRequest();
+
+  autocompleteXmlRequest.onload = function() {
+    let response = JSON.parse(this.responseText);
+    //clear any suggestions on the screen
+    document.getElementById("autocomplete-results").innerHTML = "";
+    //if 0 responses clear the screen (extra safety to maker sure old suggestions are clear)
+    if (response.common.length == 0) {
+      document.getElementById("autocomplete-results").innerHTML = "";
+      return;
+    }
+    //startWith filters out all results making sure suggestions start with exactly
+    //what the user types. Ex. user types ch, all suggetions must start with ch.
+    let startWith = response.common.filter(recipe => {
+      const regex = new RegExp(`^${currentInput}`, "gi");
+      return recipe.food_name.match(regex);
+    });
+    //just checking to make sure data is coming in
+    console.log(startWith);
+    //clearing any possible suggestions still on the screen
+    document.getElementById("autocomplete-results").innerHTML = "";
+    //creating the elements that will go on the screen under the input search bar
+    startWith.map(names => {
+      const recipe = document.createElement("DIV");
+      recipe.innerHTML = names.food_name;
+      recipe.addEventListener("click", function(e) {
+        //allows the user to click an item and fill the input with it
+        document.getElementById("searchBar").value = this.innerHTML;
+        //clear screen because one suggestion has been picked
+        document.getElementById("autocomplete-results").innerHTML = "";
+      });
+      document.getElementById("autocomplete-results").appendChild(recipe);
+    });
+    if (document.getElementById("searchBar").value == "") {
+      document.getElementById("autocomplete-results").innerHTML = "";
+    }
+  };
+  autocompleteXmlRequest.open("GET", autocompleteURL + currentInput, true);
+  autocompleteXmlRequest.setRequestHeader("x-app-id", anotherApiId);
+  autocompleteXmlRequest.setRequestHeader("x-app-key", anotherApiKey);
+  autocompleteXmlRequest.send();
+}
+*/
