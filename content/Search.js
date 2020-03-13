@@ -117,7 +117,7 @@ function addHealthLabel() {
         return;
       })
   );
-
+  //makes sure that choose one option is not an actual option
   if (label == "Choose one (optional)") {
     document.getElementById("healthContainer").innerHTML = "";
     sessionStorage.setItem("healthLabel", "");
@@ -169,6 +169,7 @@ function addDietLabel() {
         return;
       })
   );
+  //making sure choose one is not an option
   if (label == "Choose one (optional)") {
     document.getElementById("dietContainer").innerHTML = "";
     sessionStorage.setItem("dietLabel", "");
@@ -222,7 +223,7 @@ function sendGetRequest(q) {
     console.log(response.hits);
 
     sessionStorage.setItem("food", JSON.stringify(response.hits));
-
+    //send user to results page
     window.location.pathname = "cs465-project2.github.io/content/page1.html";
     //window.location.pathname = "content/page1.html";
   };
@@ -275,7 +276,7 @@ const moreFood = getRecipes();
 
 /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 &&&&&&&&&&&& AUTOCOMPLETE FEATURE &&&&&&&&&&&&&&&&&&&*/
-/*
+
 let anotherApiId = "038c58e0";
 let anotherApiKey = "83a54763d963b2fa850b419c4b61c61d";
 let autocompleteURL =
@@ -288,11 +289,14 @@ function suggestions() {
     document.getElementById("autocomplete-results").innerHTML = "";
     return;
   }
+  //stops user from starting with white spaces, without this api gets
+  //messed up
   if (currentInput == " " || currentInput == "  ") {
     document.getElementById("searchBar").value = "";
     document.getElementById("autocomplete-results").innerHTML = "";
     return;
   }
+
   callAutocomplete(currentInput);
 }
 
@@ -301,23 +305,31 @@ function callAutocomplete(currentInput) {
 
   autocompleteXmlRequest.onload = function() {
     let response = JSON.parse(this.responseText);
+    //clear any suggestions on the screen
     document.getElementById("autocomplete-results").innerHTML = "";
+    //if 0 responses clear the screen (extra safety to maker sure old suggestions are clear)
     if (response.common.length == 0) {
       document.getElementById("autocomplete-results").innerHTML = "";
       return;
     }
-
+    //startWith filters out all results making sure suggestions start with exactly
+    //what the user types. Ex. user types ch, all suggetions must start with ch.
     let startWith = response.common.filter(recipe => {
       const regex = new RegExp(`^${currentInput}`, "gi");
       return recipe.food_name.match(regex);
     });
+    //just checking to make sure data is coming in
     console.log(startWith);
+    //clearing any possible suggestions still on the screen
     document.getElementById("autocomplete-results").innerHTML = "";
+    //creating the elements that will go on the screen under the input search bar
     startWith.map(names => {
       const recipe = document.createElement("DIV");
       recipe.innerHTML = names.food_name;
       recipe.addEventListener("click", function(e) {
+        //allows the user to click an item and fill the input with it
         document.getElementById("searchBar").value = this.innerHTML;
+        //clear screen because one suggestion has been picked
         document.getElementById("autocomplete-results").innerHTML = "";
       });
       document.getElementById("autocomplete-results").appendChild(recipe);
@@ -332,5 +344,3 @@ function callAutocomplete(currentInput) {
   autocompleteXmlRequest.send();
 }
 //document.getElementById("searchBar").addEventListener("input", suggestions);
-
-*/
