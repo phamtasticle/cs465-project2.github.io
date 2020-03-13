@@ -218,6 +218,8 @@ window.onload = function() {
   const foodArray = foodString.split(",");
   const len = foodArray.length;
 
+  //loop through food array and add a display button 
+  //for every food
   for (var i = 0; i < len; ++i) {
     $(".search_area").append(
       $("<input></input>")
@@ -255,6 +257,7 @@ window.onload = function() {
             return;
           }
 
+          //sending new get request to reload page
           sendGetRequest(foodArray);
         })
     );
@@ -263,6 +266,8 @@ window.onload = function() {
   //displaying health label
   const healthLabel = sessionStorage.getItem("healthLabel");
 
+  //if there is a value for health label, 
+  //add a button for it
   if (healthLabel != "") {
     document.getElementById("resultsHealthSelector").style.display = "none";
     $(".label_area").append(
@@ -292,6 +297,8 @@ window.onload = function() {
   //displaying diet label
   const dietLabel = sessionStorage.getItem("dietLabel");
 
+  //if there is a value for diet label,
+  //display a button for it
   if (dietLabel != "") {
     document.getElementById("resultsDietSelector").style.display = "none";
     $(".label_area").append(
@@ -322,6 +329,11 @@ window.onload = function() {
 const currentFood = sessionStorage.getItem("searchedFoods");
 const foodArray = currentFood.split(",");
 console.log(foodArray);
+
+
+
+//this function gets a new value from the search bar
+//and sends a new request for it
 function modifySearchItem() {
   const currentFood = sessionStorage.getItem("searchedFoods");
   const foodArray = currentFood.split(",");
@@ -358,12 +370,18 @@ function modifySearchItem() {
   document.getElementById("resultsLoadingContainer").style.display = "block";
   sendGetRequest(foodArray);
 }
+
+
+
 //used to go back to main page and able to reset the health and diet labels
 function goback() {
   sessionStorage.setItem("healthLabel", "");
   sessionStorage.setItem("dietLabel", "");
   window.location.pathname = "cs465-project2.github.io/";
 }
+
+
+
 function resultsAddHealthLabel() {
   var label = $("#resultHealthLabelSelect option:selected").text();
 
@@ -408,6 +426,9 @@ function resultsAddHealthLabel() {
     sendGetRequest(foodArray);
   }
 }
+
+
+
 function resultAddDietLabel() {
   var label = $("#resultsDietLabelSelect option:selected").text();
   if (label == "Choose one (optional)") {
