@@ -8,4 +8,4 @@ This application uses the Edamam API for the recipe search functionality.
 
 **Here's the Link**: https://phamtasticle.github.io/cs465-project2.github.io/
 
-
+Note: 5 request per minute. 
